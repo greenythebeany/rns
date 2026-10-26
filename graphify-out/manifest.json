@@ -70,5 +70,107 @@
     "seen": 1793032090.6230683,
     "ast_hash": "894afc7d04420d21ad020620f9e2689f",
     "semantic_hash": ""
+  },
+  "design/prototypes/sample.js": {
+    "mtime": 1793032689.228039,
+    "seen": 1793032824.0577343,
+    "ast_hash": "e5bbfb93cdee72efa6ce78e58257e9fc",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1793032597.2366643,
+    "seen": 1793032824.0577343,
+    "ast_hash": "8e4145c46bf1aadece2a30947e73cb8e",
+    "semantic_hash": ""
+  },
+  "design/prototypes/a-citaren.html": {
+    "mtime": 1793032799.4309866,
+    "seen": 1793032824.0577343,
+    "ast_hash": "37080cdac3523844b1d1aeee93fe48ff",
+    "semantic_hash": ""
+  },
+  "design/prototypes/b-fazova-rovina.html": {
+    "mtime": 1793032799.4309866,
+    "seen": 1793032824.0577343,
+    "ast_hash": "1916184a2acbe39b7659021dce3744f8",
+    "semantic_hash": ""
+  },
+  "design/prototypes/c-rele.html": {
+    "mtime": 1793032799.4309866,
+    "seen": 1793032824.0577343,
+    "ast_hash": "0b2a725cde4a51874e1ec11ad6f558ab",
+    "semantic_hash": ""
+  },
+  "public/prednasky/01-uvod-do-nelinearnych-systemov.pdf": {
+    "mtime": 1790237039.6721509,
+    "seen": 1793032824.0577343,
+    "ast_hash": "febfb36225fb12118fbcb90f35e3c682",
+    "semantic_hash": ""
+  },
+  "public/prednasky/02-metoda-harmonickej-rovnovahy-1.pdf": {
+    "mtime": 1790842023.0338838,
+    "seen": 1793032824.0577343,
+    "ast_hash": "dcf75b93de26dd014bc85ad86c2b2126",
+    "semantic_hash": ""
+  },
+  "public/prednasky/03-metoda-harmonickej-rovnovahy-2.pdf": {
+    "mtime": 1793031882.7024596,
+    "seen": 1793032824.0577343,
+    "ast_hash": "c2a3a4e3fc1578ac244ea4d9aeafa3ef",
+    "semantic_hash": ""
+  },
+  "public/prednasky/04-stabilita-a-linearizacia.pdf": {
+    "mtime": 1793031891.0561018,
+    "seen": 1793032824.0577343,
+    "ast_hash": "894afc7d04420d21ad020620f9e2689f",
+    "semantic_hash": ""
+  },
+  "design/screenshots/a-citaren-1440-dark.png": {
+    "mtime": 1793032805.3931718,
+    "seen": 1793032824.0577343,
+    "ast_hash": "d5798f56a365f903891bf23867412cb9",
+    "semantic_hash": ""
+  },
+  "design/screenshots/a-citaren-1440.png": {
+    "mtime": 1793032804.1185431,
+    "seen": 1793032824.0577343,
+    "ast_hash": "b4a146597b9110e17d2f43b34f092db3",
+    "semantic_hash": ""
+  },
+  "design/screenshots/a-citaren-375-dark.png": {
+    "mtime": 1793032802.6787758,
+    "seen": 1793032824.0577343,
+    "ast_hash": "d30b3c76e2e20b7c11076953126b376a",
+    "semantic_hash": ""
+  },
+  "design/screenshots/a-citaren-375.png": {
+    "mtime": 1793032801.4500413,
+    "seen": 1793032824.0577343,
+    "ast_hash": "dea54b07976ae76f8956027633c46637",
+    "semantic_hash": ""
+  },
+  "design/screenshots/b-fazova-rovina-1440.png": {
+    "mtime": 1793032808.1121497,
+    "seen": 1793032824.0577343,
+    "ast_hash": "58f7c2386564a4baeeafd973c646ae7b",
+    "semantic_hash": ""
+  },
+  "design/screenshots/b-fazova-rovina-375.png": {
+    "mtime": 1793032806.6809118,
+    "seen": 1793032824.0577343,
+    "ast_hash": "62c2b037a3da64de8e9004493703234e",
+    "semantic_hash": ""
+  },
+  "design/screenshots/c-rele-1440.png": {
+    "mtime": 1793032810.7136736,
+    "seen": 1793032824.0577343,
+    "ast_hash": "674c04f95fed6e0f6acdbdd71cacfad9",
+    "semantic_hash": ""
+  },
+  "design/screenshots/c-rele-375.png": {
+    "mtime": 1793032809.4168718,
+    "seen": 1793032824.0577343,
+    "ast_hash": "e2026e36ae4eb8af89c84e7ecda3283e",
+    "semantic_hash": ""
   }
 }

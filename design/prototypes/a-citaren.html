@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · Čitáreň</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../../src/shared/tokens.css">
+<style>
+  /* Direction A: quiet reading room. One face, tone steps, ink-teal accent. */
+  :root { --bg: #f3f4f1; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--text-base)/var(--leading) var(--font-body); }
+  .katex { font-size: 1.05em; }
+  header { height: var(--header-h); display: flex; align-items: center; gap: var(--s5); padding: 0 var(--gutter); border-bottom: 1px solid var(--line); }
+  header .logo { font-weight: 700; font-size: 1.25rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  header nav { display: flex; gap: var(--s4); }
+  header nav a { color: var(--ink-muted); text-decoration: none; font-size: var(--text-sm); padding: var(--s3) 0; }
+  header nav a[aria-current] { color: var(--ink); box-shadow: inset 0 -2px var(--accent); }
+  .layout { display: grid; gap: var(--s6); max-width: 1120px; margin: 0 auto; padding: var(--s5) var(--gutter) 120px; }
+  @media (min-width: 1024px) { .layout { grid-template-columns: 280px minmax(0, 1fr); padding-bottom: var(--s7); } }
+  aside { display: none; }
+  @media (min-width: 1024px) { aside { display: block; } }
+  aside h2 { font-size: var(--text-sm); color: var(--ink-muted); font-weight: 600; margin: 0 0 var(--s3); }
+  aside ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s1); }
+  aside li a { display: block; padding: var(--s2) var(--s3); border-radius: var(--r-btn); color: var(--ink); text-decoration: none; font-size: var(--text-sm); line-height: 1.35; }
+  aside li a[aria-current] { background: var(--accent-wash); }
+  .bar { height: 6px; border-radius: var(--r-pill); background: var(--sunken); margin-top: 6px; overflow: hidden; display: flex; }
+  .bar i { display: block; height: 100%; }
+  .bar .k { background: var(--ok); } .bar .l { background: var(--warn); }
+  main { max-width: var(--content); }
+  .meta { display: flex; justify-content: space-between; color: var(--ink-muted); font-size: var(--text-sm); margin-bottom: var(--s3); gap: var(--s4); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); padding: var(--s5); box-shadow: var(--shadow-1); }
+  @media (min-width: 768px) { .card { padding: var(--s6); } }
+  .q { font-size: var(--text-q); line-height: var(--leading-tight); font-weight: 600; margin: 0 0 var(--s5); max-width: var(--measure); }
+  ol.opts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+  .opts li { display: flex; gap: var(--s3); align-items: center; padding: var(--s3) var(--s4); border-radius: var(--r-opt); background: var(--sunken); min-height: var(--tap); }
+  .opts b { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-weight: 600; font-size: var(--text-sm); }
+  .opts li.dim { color: var(--ink-muted); }
+  .opts li { flex-wrap: wrap; }
+  .opts li.ok { background: var(--ok-wash); color: var(--ink); outline: 2px solid var(--ok); outline-offset: -2px; }
+  .opts li.ok b { background: var(--ok); color: var(--surface); }
+  .opts .tag { margin-left: auto; color: var(--ok); font-weight: 600; font-size: var(--text-sm); white-space: nowrap; }
+  .src { margin-top: var(--s4); font-size: var(--text-sm); color: var(--ink-muted); }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin-top: var(--s5); }
+  .actions button { min-height: 52px; border-radius: var(--r-btn); border: 0; font: 600 1rem var(--font-body); cursor: pointer; }
+  .no { background: var(--bad-wash); color: var(--bad); }
+  .yes { background: var(--ok-wash); color: var(--ok); }
+  kbd { font: inherit; font-size: .8em; opacity: .75; margin-left: 6px; }
+  @media (max-width: 767px) {
+    .actions { position: fixed; left: 0; right: 0; bottom: 0; margin: 0; padding: var(--s3) var(--gutter) calc(var(--s3) + env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid var(--line); }
+    kbd { display: none; }
+  }
+  .mobile-progress { margin-bottom: var(--s4); }
+  @media (min-width: 1024px) { .mobile-progress { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">RNS</a>
+  <nav><a href="#" aria-current="page">Zápočet</a><a href="#">Prednášky</a></nav>
+</header>
+<div class="layout">
+  <aside>
+    <h2>Témy</h2>
+    <ul id="topics"></ul>
+  </aside>
+  <main>
+    <div class="mobile-progress"><div class="meta"><span>Metóda harmonickej rovnováhy</span><span>9 / 22 viem</span></div><div class="bar"><i class="k" style="width:41%"></i><i class="l" style="width:18%"></i></div></div>
+    <div class="meta"><span>Otázka 12 z 22</span><span>Učím sa</span></div>
+    <article class="card" id="card"></article>
+    <div class="actions"><button class="no">Neviem<kbd>←</kbd></button><button class="yes">Viem<kbd>→</kbd></button></div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="./sample.js"></script>
+<script>
+  const q = { ...SAMPLE.question, question: SAMPLE.question.question.replace(/ \?$/, " ?") };
+  document.getElementById('card').innerHTML =
+    `<p class="q">${q.question}</p><ol class="opts">` +
+    q.options.map(o => `<li class="${o.key === q.correct ? 'ok' : 'dim'}"><b>${o.key}</b><span>${o.text}</span>${o.key === q.correct ? '<span class="tag">✓ Správne</span>' : ''}</li>`).join('') +
+    `</ol><p class="src">Zdroj: ${q.source.pdf}, s. ${q.source.page}</p>`;
+  document.getElementById('topics').innerHTML = SAMPLE.topics.map((t, i) =>
+    `<li><a href="#" ${i === 5 ? 'aria-current="true"' : ''}>${t.name}<div class="bar"><i class="k" style="width:${t.k}%"></i><i class="l" style="width:${t.l}%"></i></div></a></li>`).join('');
+  renderMathInElement(document.body, { delimiters: [{ left: '$', right: '$', display: false }] });
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B · Fázová rovina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+  /* Direction B: phase plane. Night-first, serif question, a trajectory spiralling
+     into its equilibrium point shows how much of the topic you know. */
+  :root {
+    --bg: #0f1418; --surface: #161d22; --sunken: #1e272d; --line: #2a353c;
+    --ink: #e8ece9; --ink-muted: #9fb0b3; --accent: #8fd3c8; --accent-wash: #173332;
+    --ok: #8fd3a0; --ok-wash: #16301f; --bad: #f0957f; --bad-wash: #3a1f1a; --warn: #e6c070;
+    --body: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+    --serif: "Newsreader", Georgia, serif;
+    --gutter: 16px;
+  }
+  @media (min-width: 768px) { :root { --gutter: 32px; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.125rem/1.6 var(--body); }
+  .katex { font-size: 1.05em; }
+  header { display: flex; align-items: baseline; gap: 24px; padding: 18px var(--gutter); }
+  .logo { font: 600 1.5rem var(--serif); color: var(--ink); text-decoration: none; }
+  header nav { display: flex; gap: 20px; }
+  header nav a { color: var(--ink-muted); text-decoration: none; font-size: .9375rem; }
+  header nav a[aria-current] { color: var(--accent); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 8px var(--gutter) 128px; display: grid; gap: 40px; }
+  @media (min-width: 1024px) { .wrap { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; padding-bottom: 64px; } }
+  .topic { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .topic svg { flex: none; }
+  .topic p { margin: 0; line-height: 1.35; }
+  .topic small { display: block; color: var(--ink-muted); font-size: .9375rem; }
+  .q { font: 500 clamp(1.5rem, 1.1rem + 1.4vw, 2.125rem)/1.25 var(--serif); margin: 0 0 28px; max-width: 30ch; letter-spacing: -0.01em; }
+  ol.opts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 680px; }
+  .opts li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--surface); }
+  .opts b { font: 600 1.25rem var(--serif); color: var(--ink-muted); text-align: center; }
+  .opts li.dim { color: var(--ink-muted); background: transparent; }
+  .opts li.ok { background: var(--ok-wash); }
+  .opts li.ok b { color: var(--ok); }
+  .answer-note { margin: 16px 0 0; color: var(--ok); font-size: .9375rem; }
+  .actions { display: flex; gap: 12px; margin-top: 32px; max-width: 680px; }
+  .actions button { flex: 1; min-height: 54px; border-radius: 999px; border: 0; font: 600 1rem var(--body); cursor: pointer; }
+  .no { background: var(--bad-wash); color: var(--bad); }
+  .yes { background: var(--accent); color: #0d1f1f; }
+  kbd { font: inherit; opacity: .7; margin-left: 8px; }
+  @media (max-width: 767px) {
+    .actions { position: fixed; left: 0; right: 0; bottom: 0; margin: 0; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom)); background: var(--bg); }
+    kbd { display: none; }
+  }
+  aside { background: var(--surface); border-radius: 20px; padding: 24px; display: none; }
+  @media (min-width: 1024px) { aside { display: block; } }
+  aside h2 { font: 600 1.25rem var(--serif); margin: 0 0 16px; }
+  aside ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  aside li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: center; font-size: .9375rem; line-height: 1.35; }
+  aside li[aria-current] { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">RNS</a>
+  <nav><a href="#" aria-current="page">Zápočet</a><a href="#">Prednášky</a></nav>
+</header>
+<div class="wrap">
+  <main>
+    <div class="topic" id="topic"></div>
+    <p class="q" id="q"></p>
+    <ol class="opts" id="opts"></ol>
+    <p class="answer-note" id="note"></p>
+    <div class="actions"><button class="no">Neviem<kbd>←</kbd></button><button class="yes">Viem<kbd>→</kbd></button></div>
+  </main>
+  <aside>
+    <h2>Témy</h2>
+    <ul id="topics"></ul>
+  </aside>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="./sample.js"></script>
+<script>
+  // Spiral trajectory converging to the equilibrium point; the drawn share = known share.
+  function spiral(size, known, learning) {
+    const c = size / 2, turns = 3, pts = [];
+    for (let i = 0; i <= 120; i++) {
+      const t = i / 120, r = (c - 2) * (1 - t), a = t * turns * 2 * Math.PI;
+      pts.push(`${(c + r * Math.cos(a)).toFixed(1)},${(c + r * Math.sin(a)).toFixed(1)}`);
+    }
+    const d = 'M' + pts.join(' L');
+    const len = 1000;
+    return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true">
+      <path d="${d}" pathLength="${len}" fill="none" stroke="var(--line)" stroke-width="2"/>
+      <path d="${d}" pathLength="${len}" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="${(known + learning) * 10} ${len}"/>
+      <path d="${d}" pathLength="${len}" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-dasharray="${known * 10} ${len}"/>
+      <circle cx="${c}" cy="${c}" r="2.5" fill="${known === 100 ? 'var(--ok)' : 'var(--ink-muted)'}"/></svg>`;
+  }
+  const q = { ...SAMPLE.question, question: SAMPLE.question.question.replace(/ \?$/, " ?") }, t = SAMPLE.topics[5];
+  document.getElementById('topic').innerHTML = `${spiral(48, t.k, t.l)}<p>${t.name}<small>Otázka 12 z 22, 9 viem</small></p>`;
+  document.getElementById('q').innerHTML = q.question;
+  document.getElementById('opts').innerHTML = q.options.map(o =>
+    `<li class="${o.key === q.correct ? 'ok' : 'dim'}"><b>${o.key}</b><span>${o.text}</span></li>`).join('');
+  document.getElementById('note').textContent = `Správne je ${q.correct}. Zdroj: ${q.source.pdf}, s. ${q.source.page}`;
+  document.getElementById('topics').innerHTML = SAMPLE.topics.map((x, i) =>
+    `<li ${i === 5 ? 'aria-current="true"' : ''}>${spiral(28, x.k, x.l)}<span>${x.name}</span></li>`).join('');
+  renderMathInElement(document.body, { delimiters: [{ left: '$', right: '$', display: false }] });
+</script>
+</body>
+</html>

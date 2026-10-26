@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C · Relé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+  /* Direction C: relay. Achromatic ledger: no colour in the chrome, everything in ink,
+     the only hue is the verdict. Knew / didn't know is a two-state switch, like an ideal relay. */
+  :root {
+    --bg: #ffffff; --panel: #f2f2f0; --ink: #141414; --ink-muted: #5e5e5a; --line: #e2e2de;
+    --hue: #1d5fbf; --hue-wash: #e6eef9; --bad: #b3261e;
+    --face: "Hanken Grotesk", system-ui, sans-serif;
+    --gutter: 16px;
+  }
+  @media (min-width: 768px) { :root { --gutter: 40px; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.1875rem/1.55 var(--face); }
+  .katex { font-size: 1.05em; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 16px var(--gutter); }
+  .logo { font-weight: 800; font-size: 1.375rem; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; }
+  header nav { display: flex; gap: 4px; }
+  header nav a { color: var(--ink); text-decoration: none; font-size: .9375rem; padding: 8px 14px; border-radius: 999px; }
+  header nav a[aria-current] { background: var(--panel); font-weight: 500; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 16px var(--gutter) 136px; display: grid; gap: 48px; }
+  @media (min-width: 1024px) { .wrap { grid-template-columns: 300px minmax(0, 1fr); padding-bottom: 64px; } }
+  .count { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .count strong { font-size: clamp(3rem, 2rem + 4vw, 5.5rem); font-weight: 800; letter-spacing: -0.05em; line-height: .9; font-variant-numeric: tabular-nums; }
+  .count span { color: var(--ink-muted); font-size: 1rem; }
+  .topicname { color: var(--ink-muted); margin: 0 0 24px; font-size: 1rem; }
+  .q { font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem); line-height: 1.25; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 28px; max-width: 32ch; }
+  ol.opts { list-style: none; margin: 0; padding: 0; max-width: 720px; }
+  .opts li { display: grid; grid-template-columns: 44px 1fr auto; gap: 8px 14px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--line); }
+  .opts li:last-child { border-bottom: 1px solid var(--line); }
+  .opts b { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink-muted); }
+  .opts li.ok b, .opts li.ok span { color: var(--hue); }
+  .opts li.ok .v { color: var(--hue); font-size: .9375rem; font-weight: 500; }
+  .opts li.dim span { color: var(--ink-muted); }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 32px; max-width: 720px; }
+  .actions button { min-height: 56px; border: 0; border-radius: 0; font: 700 1.0625rem var(--face); cursor: pointer; }
+  .no { background: var(--panel); color: var(--ink); }
+  .yes { background: var(--ink); color: #fff; }
+  kbd { font: inherit; font-weight: 400; opacity: .6; margin-left: 8px; }
+  @media (max-width: 767px) {
+    .actions { position: fixed; left: 0; right: 0; bottom: 0; margin: 0; padding: 8px var(--gutter) calc(8px + env(safe-area-inset-bottom)); background: var(--bg); }
+    kbd { display: none; }
+  }
+  aside { display: none; }
+  @media (min-width: 1024px) { aside { display: block; } }
+  aside h2 { font-size: 1rem; font-weight: 700; margin: 0 0 12px; }
+  aside table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+  aside td { padding: 10px 0; border-top: 1px solid var(--line); vertical-align: top; line-height: 1.35; }
+  aside td.n { text-align: right; font-variant-numeric: tabular-nums; padding-left: 12px; white-space: nowrap; color: var(--ink-muted); }
+  aside tr[aria-current] td { font-weight: 700; color: var(--ink); }
+  .legend { color: var(--ink-muted); font-size: .875rem; margin-top: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">RNS</a>
+  <nav><a href="#" aria-current="page">Zápočet</a><a href="#">Prednášky</a></nav>
+</header>
+<div class="wrap">
+  <aside>
+    <h2>Témy</h2>
+    <table id="topics"></table>
+    <p class="legend">viem / otázok v téme</p>
+  </aside>
+  <main>
+    <div class="count"><strong>12</strong><span>z 22 otázok</span></div>
+    <p class="topicname" id="tn"></p>
+    <p class="q" id="q"></p>
+    <ol class="opts" id="opts"></ol>
+    <div class="actions"><button class="no">Neviem<kbd>←</kbd></button><button class="yes">Viem<kbd>→</kbd></button></div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="./sample.js"></script>
+<script>
+  const q = { ...SAMPLE.question, question: SAMPLE.question.question.replace(/ \?$/, " ?") }, counts = [15, 6, 3, 3, 2, 22, 9];
+  document.getElementById('tn').textContent = SAMPLE.topics[5].name;
+  document.getElementById('q').innerHTML = q.question;
+  document.getElementById('opts').innerHTML = q.options.map(o =>
+    `<li class="${o.key === q.correct ? 'ok' : 'dim'}"><b>${o.key}</b><span>${o.text}</span>${o.key === q.correct ? '<span class="v">správne</span>' : '<span></span>'}</li>`).join('');
+  document.getElementById('topics').innerHTML = SAMPLE.topics.map((t, i) =>
+    `<tr ${i === 5 ? 'aria-current="true"' : ''}><td>${t.name}</td><td class="n">${Math.round(t.k / 100 * counts[i])} / ${counts[i]}</td></tr>`).join('');
+  renderMathInElement(document.body, { delimiters: [{ left: '$', right: '$', display: false }] });
+</script>
+</body>
+</html>
