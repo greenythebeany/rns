@@ -1,0 +1,25 @@
+{
+  "name": "rns",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prednasky": "node scripts/prednasky.mjs",
+    "predev": "npm run prednasky",
+    "dev": "vite",
+    "prebuild": "npm run prednasky",
+    "build": "vite build",
+    "preview": "vite preview",
+    "extract": "python scripts/extract.py"
+  },
+  "dependencies": {
+    "@fontsource/atkinson-hyperlegible-next": "^5.3.0",
+    "katex": "^0.19.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.5"
+  }
+}

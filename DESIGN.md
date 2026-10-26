@@ -17,10 +17,10 @@ built around one question at a time.
 Every text/background pair meets WCAG AA (body text ≥ 7:1 where possible, UI text ≥ 4.5:1).
 
 ### Light theme ("Paper")
-- **Warm Paper** (#F6F4EF): page background. Off-white so it is easier on the eyes over long reading than #FFF.
+- **Cool Paper** (#F3F4F1): page background. A neutral, faintly green off-white, easier on the eyes over long reading than #FFF (and deliberately not the cream "generated page" ground).
 - **Clean Sheet** (#FFFFFF): cards and question surfaces, sitting just above the paper.
 - **Sunken Paper** (#EEEBE4): sunken areas such as option rows at rest, search field and progress tracks.
-- **Bookbinding Ink** (#1D1C1A): primary text and headings (~16:1 on Warm Paper).
+- **Bookbinding Ink** (#1D1C1A): primary text and headings (~15:1 on Cool Paper).
 - **Pencil Grey** (#55514A): secondary text, metadata, topic labels (~7.5:1).
 - **Hairline Rule** (#DCD7CC): borders and dividers.
 - **Ink Teal** (#0E5A5E): primary accent for links, focus ring, active nav, primary buttons and progress fill (~7.6:1).
@@ -64,7 +64,7 @@ Every text/background pair meets WCAG AA (body text ≥ 7:1 where possible, UI t
 - **Answer options (A–D):** full-width rows with a circular letter badge and 12 px radius. At rest they are Sunken Paper. After reveal, the correct row turns Mint Wash with a green badge and check icon; the others fade to 70 % opacity. State is never shown by colour alone: there is always an icon and text too.
 - **Inputs/Forms:** the search field is a Sunken Paper fill, 1 px Hairline Rule, 12 px radius and 48 px tall, with the focus ring in Ink Teal.
 - **Progress bars:** 8 px pill-shaped track in Sunken Paper. The fill is segmented into known (green) and learning (amber), with "new" left as the empty track.
-- **Header:** slim (56 px), the background colour, and a bottom hairline. It holds the "RNS" wordmark on the left and the Zápočet and Prednášky links. The active link has an accent underline and `aria-current="page"`.
+- **Header:** slim (56 px), the background colour, and a bottom hairline. It holds the "RNS" wordmark on the left and the Zápočet and Prednášky links. The active link has an accent underline and `aria-current="page"`. On the far right a 44 px light/dark switch (sun/moon icon). The theme follows the OS until it is used, then the choice is remembered in localStorage.
 
 ## 5. Layout Principles
 
