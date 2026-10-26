@@ -162,8 +162,8 @@
     "semantic_hash": ""
   },
   "src/data/prednasky.json": {
-    "mtime": 1793056165.0914338,
-    "seen": 1793056228.9090545,
+    "mtime": 1793056733.9469485,
+    "seen": 1793056748.9810078,
     "ast_hash": "ae4986b13a3d2ba94248a9c46457be8e",
     "semantic_hash": ""
   },
@@ -228,9 +228,9 @@
     "semantic_hash": ""
   },
   "src/zapocet/Flashcards.jsx": {
-    "mtime": 1793033212.4954243,
-    "seen": 1793033452.8553348,
-    "ast_hash": "7005f434156b556db499e2137a745bab",
+    "mtime": 1793056684.357364,
+    "seen": 1793056748.9810078,
+    "ast_hash": "ee61c61dcd760ac180a11a9b6ddf9c1b",
     "semantic_hash": ""
   },
   "src/zapocet/ProgressView.jsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "src/zapocet/TestMode.jsx": {
-    "mtime": 1793033230.504624,
-    "seen": 1793033452.8553348,
-    "ast_hash": "010ebc74d3f2aa99864b2c08c95281df",
+    "mtime": 1793056684.4205132,
+    "seen": 1793056748.9810078,
+    "ast_hash": "55975f920649eb0ce3dacbc941c07b36",
     "semantic_hash": ""
   },
   "src/zapocet/data.js": {
@@ -258,9 +258,9 @@
     "semantic_hash": ""
   },
   "src/zapocet/parts.jsx": {
-    "mtime": 1793033375.5901234,
-    "seen": 1793033452.8553348,
-    "ast_hash": "2b100ee3d34ae8c9f196486448eaad8b",
+    "mtime": 1793056660.9581008,
+    "seen": 1793056748.9810078,
+    "ast_hash": "c2f538a8b16ef8484533c582ca1bbee1",
     "semantic_hash": ""
   },
   "vite.config.js": {
@@ -327,6 +327,12 @@
     "mtime": 1793033296.1120028,
     "seen": 1793033452.8553348,
     "ast_hash": "bc64d31b5e0552affb8bccdd4ad45725",
+    "semantic_hash": ""
+  },
+  ".claude/launch.json": {
+    "mtime": 1793056269.0701866,
+    "seen": 1793056748.9810078,
+    "ast_hash": "7c22d414b9c4f01c87476fb68aa3ebe4",
     "semantic_hash": ""
   }
 }

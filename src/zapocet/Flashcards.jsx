@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { statusOf } from '../shared/progress.js'
 import { pool, shuffle, plural } from './data.js'
 import { QuestionCard, StatusChip, StudyActions, TopicPicker, useStudyKeys } from './parts.jsx'
@@ -17,16 +17,21 @@ export default function Flashcards({ progress, onGrade }) {
   const [topic, setTopic] = useState('all')
   const [queue, setQueue] = useState(() => buildQueue('all', progress))
   const [revealed, setRevealed] = useState(false)
+  const [picked, setPicked] = useState(null)
   const [tally, setTally] = useState({ knew: 0, didnt: 0 })
 
   const restart = (t = topic) => {
     setTopic(t)
     setQueue(buildQueue(t, progress))
     setRevealed(false)
+    setPicked(null)
     setTally({ knew: 0, didnt: 0 })
   }
 
   const current = queue[0]
+  // Reshuffled every time a card is shown, also when it comes back.
+  const options = useMemo(() => (current ? shuffle(current.options) : []), [current, tally])
+  const pick = useCallback((key) => { setPicked(key); setRevealed(true) }, [])
   const reveal = useCallback(() => setRevealed(true), [])
   const grade = useCallback((knew) => {
     if (!current) return
@@ -39,9 +44,11 @@ export default function Flashcards({ progress, onGrade }) {
       return [...rest.slice(0, at), q[0], ...rest.slice(at)]
     })
     setRevealed(false)
+    setPicked(null)
   }, [current, onGrade])
+  const next = useCallback(() => grade(picked === current?.correct), [grade, picked, current])
 
-  useStudyKeys({ revealed, onReveal: reveal, onGrade: grade, enabled: Boolean(current) })
+  useStudyKeys({ revealed, picked, options, onPick: pick, onReveal: reveal, onGrade: grade, onNext: next, enabled: Boolean(current) })
 
   return (
     <div className="study">
@@ -54,10 +61,10 @@ export default function Flashcards({ progress, onGrade }) {
               <StatusChip status={statusOf(progress, current.id)} />
             </div>
             <div key={current.id + tally.knew + tally.didnt} className="fade-in">
-              <QuestionCard q={current} revealed={revealed} />
+              <QuestionCard q={current} options={options} revealed={revealed} picked={picked} onPick={pick} />
             </div>
-            <StudyActions revealed={revealed} onReveal={reveal} onGrade={grade} />
-            <p className="keys-hint hide-mobile muted small">Klávesy: medzerník ukáže odpoveď, ← neviem, → viem.</p>
+            <StudyActions revealed={revealed} picked={picked} onReveal={reveal} onGrade={grade} onNext={next} />
+            <p className="keys-hint hide-mobile muted small">Klikni na odpoveď alebo stlač 1–4. Medzerník ukáže odpoveď bez tipu, potom ← neviem, → viem.</p>
           </>
         ) : (
           <div className="card done">

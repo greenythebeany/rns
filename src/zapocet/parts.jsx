@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Rich } from '../shared/Rich.jsx'
 import { STATUS_LABEL, statusOf, summarize } from '../shared/progress.js'
 import { topics, pool } from './data.js'
@@ -20,30 +20,51 @@ export function StatusChip({ status }) {
   return <span className={`chip chip-${status}`}>{STATUS_LABEL[status]}</span>
 }
 
-/** Question with its options. After reveal the correct option is marked by colour, icon and text. */
-export function QuestionCard({ q, revealed, headingLevel = 2 }) {
-  const H = `h${headingLevel}`
+const LETTERS = 'ABCDEFGH'
+
+/**
+ * Question with its options. `options` may be shuffled, so letters follow the shown order.
+ * With `onPick` the options are buttons; after reveal the correct one and a wrong pick are marked
+ * by colour, icon and text.
+ */
+export function QuestionCard({ q, options = q.options, revealed, picked, onPick }) {
+  const correctAt = options.findIndex((o) => o.key === q.correct)
   return (
     <article className="card qcard">
-      <Rich as={H} className="q" text={q.question} />
-      {q.options.length > 0 ? (
+      <Rich as="h2" className="q" text={q.question} />
+      {options.length > 0 ? (
         <ol className="opts">
-          {q.options.map((o) => {
+          {options.map((o, i) => {
             const ok = revealed && o.key === q.correct
-            return (
-              <li key={o.key} className={revealed ? (ok ? 'ok' : 'dim') : undefined}>
-                <b aria-hidden="true">{o.key}</b>
-                <span className="visually-hidden">{o.key})</span>
+            const bad = revealed && o.key === picked && !ok
+            const body = (
+              <>
+                <b aria-hidden="true">{LETTERS[i]}</b>
+                <span className="visually-hidden">{LETTERS[i]})</span>
                 <Rich className="opt-text" text={o.text} />
                 {ok && <span className="tag"><span aria-hidden="true">✓ </span>Správne</span>}
-              </li>
+                {bad && <span className="tag tag-bad"><span aria-hidden="true">✗ </span>Tvoja odpoveď</span>}
+              </>
             )
+            if (onPick && !revealed) {
+              return (
+                <li key={o.key} className="pick">
+                  <button type="button" className="opt-btn" onClick={() => onPick(o.key)}>{body}</button>
+                </li>
+              )
+            }
+            return <li key={o.key} className={revealed ? (ok ? 'ok' : bad ? 'bad' : 'dim') : undefined}>{body}</li>
           })}
         </ol>
       ) : revealed ? (
         <div className="open-answer"><span className="tag">Správna odpoveď</span><Rich as="p" text={q.answer} /></div>
       ) : (
         <p className="muted open-hint">Otázka bez možností. Odpovedz si v duchu a potom odkry odpoveď.</p>
+      )}
+      {revealed && picked != null && options.length > 0 && (
+        <p className={`verdict ${picked === q.correct ? 'is-ok' : 'is-bad'}`} role="status">
+          {picked === q.correct ? 'Správne.' : `${picked ? 'Nesprávne.' : 'Bez odpovede.'} Správna je ${LETTERS[correctAt]}.`}
+        </p>
       )}
       {revealed && <p className="src">Zdroj: {q.source.pdf}, s. {q.source.page}</p>}
     </article>
@@ -85,28 +106,48 @@ export function TopicPicker({ value, onChange, progress, id }) {
   )
 }
 
-/** Space reveals, ← / → grade. Ignored while typing in a field. */
-export function useStudyKeys({ revealed, onReveal, onGrade, enabled = true }) {
+/**
+ * 1–4 or A–D pick an option, space reveals, ← / → self-grade, after a pick space / → / Enter go on.
+ * Ignored while typing in a field.
+ */
+export function useStudyKeys({ revealed, picked, options = [], onPick, onReveal, onGrade, onNext, enabled = true }) {
   useEffect(() => {
     if (!enabled) return
     function onKey(e) {
       if (e.altKey || e.ctrlKey || e.metaKey) return
       const tag = e.target.tagName
       if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return
+      if (!revealed && onPick && e.key.length === 1) {
+        const k = e.key.toUpperCase()
+        const i = '1234'.includes(k) ? Number(k) - 1 : LETTERS.indexOf(k)
+        if (i >= 0 && i < options.length) { e.preventDefault(); onPick(options[i].key); return }
+      }
+      if (revealed && picked != null) {
+        if (e.key === 'Enter' && tag === 'BUTTON') return
+        if (e.key === ' ' || e.key === 'Enter' || e.key === 'ArrowRight') { e.preventDefault(); onNext() }
+        return
+      }
       if (e.key === ' ' && !revealed) { e.preventDefault(); onReveal() }
       else if (e.key === 'ArrowLeft' && revealed) { e.preventDefault(); onGrade(false) }
       else if (e.key === 'ArrowRight' && revealed) { e.preventDefault(); onGrade(true) }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [revealed, onReveal, onGrade, enabled])
+  }, [revealed, picked, options, onPick, onReveal, onGrade, onNext, enabled])
 }
 
-/** Reveal button, then Neviem / Viem. Fixed to the bottom on phones. */
-export function StudyActions({ revealed, onReveal, onGrade }) {
+/** Reveal button, then Neviem / Viem, or Ďalej after a picked option. Fixed to the bottom on phones. */
+export function StudyActions({ revealed, picked, onReveal, onGrade, onNext, revealLabel = 'Ukázať odpoveď' }) {
+  const nextRef = useRef(null)
+  const showNext = revealed && picked != null
+  useEffect(() => { if (showNext) nextRef.current?.focus({ preventScroll: true }) }, [showNext])
   return (
     <div className="study-actions">
-      {revealed ? (
+      {showNext ? (
+        <button ref={nextRef} type="button" className="btn btn-primary wide" onClick={onNext}>
+          Ďalej<kbd className="hide-mobile" aria-hidden="true">→</kbd>
+        </button>
+      ) : revealed ? (
         <>
           <button type="button" className="btn btn-bad" onClick={() => onGrade(false)}>
             Neviem<kbd className="hide-mobile" aria-hidden="true">←</kbd>
@@ -116,8 +157,8 @@ export function StudyActions({ revealed, onReveal, onGrade }) {
           </button>
         </>
       ) : (
-        <button type="button" className="btn btn-primary wide" onClick={onReveal}>
-          Ukázať odpoveď<kbd className="hide-mobile" aria-hidden="true">medzerník</kbd>
+        <button type="button" className="btn wide" onClick={onReveal}>
+          {revealLabel}<kbd className="hide-mobile" aria-hidden="true">medzerník</kbd>
         </button>
       )}
     </div>

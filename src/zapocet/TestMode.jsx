@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Rich } from '../shared/Rich.jsx'
 import { topics, pool, shuffle, plural } from './data.js'
 import { QuestionCard, StudyActions, useStudyKeys } from './parts.jsx'
@@ -12,7 +12,7 @@ function Setup({ onStart }) {
   return (
     <form className="card test-setup" onSubmit={(e) => { e.preventDefault(); onStart(shuffle(pool(topic)).slice(0, count)) }}>
       <h2>Cvičný test</h2>
-      <p className="muted">Odpovedz si v duchu, odkry správnu odpoveď a ohodnoť sa. Na konci uvidíš skóre.</p>
+      <p className="muted">Klikni na odpoveď a hneď uvidíš, či je správna. Poradie možností sa zakaždým zamieša. Otázky bez možností ohodnotíš tlačidlami Viem a Neviem. Na konci uvidíš skóre.</p>
       <label className="lbl" htmlFor="t-topic">Téma</label>
       <select id="t-topic" className="field" value={topic} onChange={(e) => setTopic(e.target.value)}>
         <option value="all">Všetky témy</option>
@@ -69,20 +69,27 @@ export default function TestMode({ onGrade }) {
   const [items, setItems] = useState(null)
   const [answers, setAnswers] = useState([])
   const [revealed, setRevealed] = useState(false)
+  const [picked, setPicked] = useState(null)
 
-  const start = (list) => { setItems(list); setAnswers([]); setRevealed(false) }
+  const start = (list) => { setItems(list); setAnswers([]); setRevealed(false); setPicked(null) }
   const index = answers.length
   const current = items?.[index]
+  const options = useMemo(() => (current ? shuffle(current.options) : []), [current, index])
+  const choice = options.length > 0
 
-  const reveal = useCallback(() => setRevealed(true), [])
+  const pick = useCallback((key) => { setPicked(key); setRevealed(true) }, [])
+  // Without a pick, a multiple-choice question counts as wrong.
+  const reveal = useCallback(() => { setRevealed(true); if (choice) setPicked('') }, [choice])
   const grade = useCallback((knew) => {
     if (!current) return
     onGrade(current.id, knew)
     setAnswers((a) => [...a, knew])
     setRevealed(false)
+    setPicked(null)
   }, [current, onGrade])
+  const next = useCallback(() => grade(picked === current?.correct), [grade, picked, current])
 
-  useStudyKeys({ revealed, onReveal: reveal, onGrade: grade, enabled: Boolean(current) })
+  useStudyKeys({ revealed, picked, options, onPick: pick, onReveal: reveal, onGrade: grade, onNext: next, enabled: Boolean(current) })
 
   if (!items) return <div className="narrow centered"><Setup onStart={start} /></div>
   if (!current) {
@@ -102,9 +109,12 @@ export default function TestMode({ onGrade }) {
         <i className="known" style={{ width: `${(index / items.length) * 100}%`, background: 'var(--accent)' }} />
       </div>
       <div key={current.id + index} className="fade-in">
-        <QuestionCard q={current} revealed={revealed} />
+        <QuestionCard q={current} options={options} revealed={revealed} picked={picked} onPick={pick} />
       </div>
-      <StudyActions revealed={revealed} onReveal={reveal} onGrade={grade} />
+      <StudyActions
+        revealed={revealed} picked={picked} onReveal={reveal} onGrade={grade} onNext={next}
+        revealLabel={choice ? 'Neviem, ukázať odpoveď' : 'Ukázať odpoveď'}
+      />
     </div>
   )
 }

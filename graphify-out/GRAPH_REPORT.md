@@ -1,17 +1,17 @@
 # Graph Report - RNS-zapocet  (2026-10-27)
 
 ## Corpus Check
-- 27 files · ~65,430 words
+- 28 files · ~65,883 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 5 file(s) not represented in the graph (top: .css 4, (none) 1)
 
 ## Summary
-- 161 nodes · 313 edges · 12 communities (10 shown, 2 thin omitted)
+- 161 nodes · 315 edges · 12 communities (10 shown, 2 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `230870a8`
+- Built from commit: `bb979fef`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -29,8 +29,8 @@
 - sw-template.js
 
 ## God Nodes (most connected - your core abstractions)
-1. `plural()` - 12 edges
-2. `Flashcards()` - 11 edges
+1. `Flashcards()` - 13 edges
+2. `plural()` - 12 edges
 3. `summarize()` - 10 edges
 4. `react` - 9 edges
 5. `Browse()` - 9 edges
@@ -90,7 +90,7 @@ Cohesion: 0.20
 Nodes (8): Home(), dateFmt, Prednasky(), size(), sizeFmt, fold(), plural(), loadProgress()
 
 ### Community 9 - "TestMode.jsx"
-Cohesion: 0.31
+Cohesion: 0.32
 Nodes (13): Rich, pool(), shuffle(), buildQueue(), Flashcards(), QuestionCard(), StudyActions(), TopicPicker() (+5 more)
 
 ### Community 10 - "scripts"
