@@ -1,0 +1,21 @@
+.home { max-width: 960px; margin: 0 auto; display: grid; gap: var(--s6); padding-top: var(--s4); }
+.intro { display: grid; gap: var(--s3); max-width: 40rem; }
+.intro p { color: var(--ink-muted); font-size: 1.125rem; }
+
+.entries { display: grid; gap: var(--s4); }
+@media (min-width: 768px) { .entries { grid-template-columns: 1fr 1fr; gap: var(--s5); } }
+
+.entry {
+  display: grid; align-content: start; gap: var(--s3);
+  padding: var(--s5); min-height: 240px;
+  color: var(--ink); text-decoration: none;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+@media (min-width: 768px) { .entry { padding: var(--s6); min-height: 300px; } }
+.entry:hover { border-color: var(--accent); }
+.entry:active { transform: translateY(1px); }
+.entry h2 { font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem); letter-spacing: -0.015em; }
+.entry-progress, .entry-latest { display: grid; gap: var(--s2); margin-top: var(--s2); }
+.entry-progress .bar { height: 8px; }
+.latest-title { font-weight: 600; }
+.entry-go { margin-top: auto; padding-top: var(--s3); color: var(--accent); font-weight: 600; }
