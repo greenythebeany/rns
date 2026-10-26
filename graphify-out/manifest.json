@@ -1,0 +1,74 @@
+{
+  "scripts/crosscheck.json": {
+    "mtime": 1793032071.3280575,
+    "seen": 1793032090.6230683,
+    "ast_hash": "06910c99222e729b674252662a69e0cb",
+    "semantic_hash": ""
+  },
+  "scripts/extract.py": {
+    "mtime": 1793032070.8896008,
+    "seen": 1793032090.6230683,
+    "ast_hash": "1552ba1cc62fa6cb3dd7fd1c808f2cf8",
+    "semantic_hash": ""
+  },
+  "src/data/questions.json": {
+    "mtime": 1793032071.3280575,
+    "seen": 1793032090.6230683,
+    "ast_hash": "3c13d3b21af5076e75ce05f899227e7b",
+    "semantic_hash": ""
+  },
+  "ISSUES.md": {
+    "mtime": 1793032083.8058412,
+    "seen": 1793032090.6230683,
+    "ast_hash": "befd9b353718112cf876e50c81383588",
+    "semantic_hash": ""
+  },
+  "Z\u00e1po\u010det_RNS.pdf": {
+    "mtime": 1793031298.6056519,
+    "seen": 1793032090.6230683,
+    "ast_hash": "10651a869ac083b073affec15ae35893",
+    "semantic_hash": ""
+  },
+  "Z\u00e1po\u010det_RNS_odpovede.pdf": {
+    "mtime": 1793031303.2174659,
+    "seen": 1793032090.6230683,
+    "ast_hash": "81ca3f15e0a51545c189d84cda2c7372",
+    "semantic_hash": ""
+  },
+  "Z\u00e1po\u010det_RNS_odpovede2.pdf": {
+    "mtime": 1793031309.319577,
+    "seen": 1793032090.6230683,
+    "ast_hash": "88fa2cd7af9299b90c1ada4918c71de6",
+    "semantic_hash": ""
+  },
+  "Z\u00e1po\u010det_RNS_odpovede3.pdf": {
+    "mtime": 1793031313.5102248,
+    "seen": 1793032090.6230683,
+    "ast_hash": "e0ba67bd1ce60aa442f6af9e2e2c7eca",
+    "semantic_hash": ""
+  },
+  "prednasky/Riadenie_nelinearnych_systemov_01+02.pdf": {
+    "mtime": 1790237039.6721509,
+    "seen": 1793032090.6230683,
+    "ast_hash": "febfb36225fb12118fbcb90f35e3c682",
+    "semantic_hash": ""
+  },
+  "prednasky/Riadenie_nelinearnych_systemov_03+04.pdf": {
+    "mtime": 1790842023.0338838,
+    "seen": 1793032090.6230683,
+    "ast_hash": "dcf75b93de26dd014bc85ad86c2b2126",
+    "semantic_hash": ""
+  },
+  "prednasky/Riadenie_nelinearnych_systemov_05+06.pdf": {
+    "mtime": 1793031882.7024596,
+    "seen": 1793032090.6230683,
+    "ast_hash": "c2a3a4e3fc1578ac244ea4d9aeafa3ef",
+    "semantic_hash": ""
+  },
+  "prednasky/Riadenie_nelinearnych_systemov_07az12.pdf": {
+    "mtime": 1793031891.0561018,
+    "seen": 1793032090.6230683,
+    "ast_hash": "894afc7d04420d21ad020620f9e2689f",
+    "semantic_hash": ""
+  }
+}

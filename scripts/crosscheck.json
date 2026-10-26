@@ -1,0 +1,27 @@
+{
+  "parseWarnings": [
+    "q41: no point value '(1b.)' in question text"
+  ],
+  "highlightMismatches": [
+    {
+      "pdf": "Zápočet_RNS_odpovede2.pdf",
+      "id": "q023",
+      "page": 4,
+      "statedCorrect": "A",
+      "highlighted": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "pdf": "Zápočet_RNS_odpovede2.pdf",
+      "id": "q059",
+      "page": 9,
+      "statedCorrect": "B",
+      "highlighted": [
+        "B",
+        "C"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1975 @@
+{
+  "generatedFrom": [
+    "Zápočet_RNS.pdf",
+    "Zápočet_RNS_odpovede2.pdf",
+    "Zápočet_RNS_odpovede3.pdf"
+  ],
+  "topics": [
+    {
+      "id": "t1",
+      "name": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "slug": "zakladne-pojmy-kategorie-vlastnosti-a-typy-statickych-nelinearit"
+    },
+    {
+      "id": "t2",
+      "name": "Metóda stavového/fázového priestoru/roviny",
+      "slug": "metoda-stavoveho-fazoveho-priestoru-roviny"
+    },
+    {
+      "id": "t3",
+      "name": "Izoklíny",
+      "slug": "izokliny"
+    },
+    {
+      "id": "t4",
+      "name": "Typy rovnovážnych stavov a iné nelineárne systémy",
+      "slug": "typy-rovnovaznych-stavov-a-ine-nelinearne-systemy"
+    },
+    {
+      "id": "t5",
+      "name": "Nelineárne riadenie vo fázovej rovine a kĺzavý režim",
+      "slug": "nelinearne-riadenie-vo-fazovej-rovine-a-klzavy-rezim"
+    },
+    {
+      "id": "t6",
+      "name": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "slug": "metoda-harmonickej-rovnovahy-linearizacie-ekvivalentneho-prenosu"
+    },
+    {
+      "id": "t7",
+      "name": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "slug": "aplikacia-metody-harmonickej-rovnovahy-ekvivalentne-prenosy-a-ine"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q001",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čím sa vyznačujú nekonzervatívne dynamické nelinearity ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pamäťou"
+        },
+        {
+          "key": "B",
+          "text": "Rozptylom energie"
+        },
+        {
+          "key": "C",
+          "text": "Tým, že nemajú tlmenie"
+        },
+        {
+          "key": "D",
+          "text": "Hysterézou"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Rozptylom energie",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 1
+      },
+      "searchText": "Čím sa vyznačujú nekonzervatívne dynamické nelinearity ? Pamäťou Rozptylom energie Tým, že nemajú tlmenie Hysterézou B) Rozptylom energie"
+    },
+    {
+      "id": "q002",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čím sa vyznačujú nelineárne systémy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Neplatí v nich princíp superpozície ani komutatívny zákon"
+        },
+        {
+          "key": "B",
+          "text": "Platí v nich princíp superpozície aj komutatívny zákon"
+        },
+        {
+          "key": "C",
+          "text": "Neplatí v nich princíp superpozície ale platí komutatívny zákon"
+        },
+        {
+          "key": "D",
+          "text": "Platí v nich princíp superpozície ale neplatí komutatívny zákon"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Neplatí v nich princíp superpozície ani komutatívny zákon",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 1
+      },
+      "searchText": "Čím sa vyznačujú nelineárne systémy ? Neplatí v nich princíp superpozície ani komutatívny zákon Platí v nich princíp superpozície aj komutatívny zákon Neplatí v nich princíp superpozície ale platí komutatívny zákon Platí v nich princíp superpozície ale neplatí komutatívny zákon A) Neplatí v nich princíp superpozície ani komutatívny zákon"
+    },
+    {
+      "id": "q003",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Stabilita nelineárneho systému NEZÁVISÍ na",
+      "options": [
+        {
+          "key": "A",
+          "text": "štruktúre systému"
+        },
+        {
+          "key": "B",
+          "text": "začiatočných podmienkach"
+        },
+        {
+          "key": "C",
+          "text": "priebehu výstupného signálu"
+        },
+        {
+          "key": "D",
+          "text": "parametroch systému"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** priebehu výstupného signálu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 1
+      },
+      "searchText": "Stabilita nelineárneho systému NEZÁVISÍ na štruktúre systému začiatočných podmienkach priebehu výstupného signálu parametroch systému C) priebehu výstupného signálu"
+    },
+    {
+      "id": "q004",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čím sa vyznačujú rovnovážne stavy systému ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nulovými deriváciami signálov"
+        },
+        {
+          "key": "B",
+          "text": "Nenulovými hodnotami signálov"
+        },
+        {
+          "key": "C",
+          "text": "Nulovými hodnotami signálov"
+        },
+        {
+          "key": "D",
+          "text": "Nenulovými deriváciami signálov"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Nulovými deriváciami signálov",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 1
+      },
+      "searchText": "Čím sa vyznačujú rovnovážne stavy systému ? Nulovými deriváciami signálov Nenulovými hodnotami signálov Nulovými hodnotami signálov Nenulovými deriváciami signálov A) Nulovými deriváciami signálov"
+    },
+    {
+      "id": "q005",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čo sú to autooscilácie ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tlmené oscilácie"
+        },
+        {
+          "key": "B",
+          "text": "Singulárne body"
+        },
+        {
+          "key": "C",
+          "text": "Trvalé oscilácie"
+        },
+        {
+          "key": "D",
+          "text": "Parazitné oscilácie"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Trvalé oscilácie",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 1
+      },
+      "searchText": "Čo sú to autooscilácie ? Tlmené oscilácie Singulárne body Trvalé oscilácie Parazitné oscilácie C) Trvalé oscilácie"
+    },
+    {
+      "id": "q006",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Ako sú opísané statické nelinearity ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Lineárnymi prevodovými charakteristikami"
+        },
+        {
+          "key": "B",
+          "text": "Lineárnymi diferenciálnymi rovnicami"
+        },
+        {
+          "key": "C",
+          "text": "Nelineárnymi diferenciálnymi rovnicami"
+        },
+        {
+          "key": "D",
+          "text": "Nelineárnymi prevodovými charakteristikami"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Nelineárnymi prevodovými charakteristikami",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 1
+      },
+      "searchText": "Ako sú opísané statické nelinearity ? Lineárnymi prevodovými charakteristikami Lineárnymi diferenciálnymi rovnicami Nelineárnymi diferenciálnymi rovnicami Nelineárnymi prevodovými charakteristikami D) Nelineárnymi prevodovými charakteristikami"
+    },
+    {
+      "id": "q007",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čím sa vyznačujú statické nelinearity bez pamäte ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nejednoznačnosťou"
+        },
+        {
+          "key": "B",
+          "text": "Jednoznačnosťou"
+        },
+        {
+          "key": "C",
+          "text": "Hysterézou"
+        },
+        {
+          "key": "D",
+          "text": "Dynamikou"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Jednoznačnosťou",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Čím sa vyznačujú statické nelinearity bez pamäte ? Nejednoznačnosťou Jednoznačnosťou Hysterézou Dynamikou B) Jednoznačnosťou"
+    },
+    {
+      "id": "q008",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Ako sa prejavuje obmedzenie výstupu dynamického systému ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ako reléová funkcia"
+        },
+        {
+          "key": "B",
+          "text": "Ako charakteristika nasýtenia"
+        },
+        {
+          "key": "C",
+          "text": "Ako pásmo necitlivosti"
+        },
+        {
+          "key": "D",
+          "text": "Ako hysteréza"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Ako charakteristika nasýtenia",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Ako sa prejavuje obmedzenie výstupu dynamického systému ? Ako reléová funkcia Ako charakteristika nasýtenia Ako pásmo necitlivosti Ako hysteréza B) Ako charakteristika nasýtenia"
+    },
+    {
+      "id": "q009",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Akú charakteristiku má magnetizačná krivka feromagnetických materiálov ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Relé s hysterézou"
+        },
+        {
+          "key": "B",
+          "text": "Hysteréza bez nasýtenia"
+        },
+        {
+          "key": "C",
+          "text": "Hysteréza s nasýtením"
+        },
+        {
+          "key": "D",
+          "text": "Relé s pásmom necitlivosti"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Hysteréza s nasýtením",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Akú charakteristiku má magnetizačná krivka feromagnetických materiálov ? Relé s hysterézou Hysteréza bez nasýtenia Hysteréza s nasýtením Relé s pásmom necitlivosti C) Hysteréza s nasýtením"
+    },
+    {
+      "id": "q010",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Kam by ste zaradili nelinearitu typu vôľa v zuboch ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Statická nelinearita bez pamäte"
+        },
+        {
+          "key": "B",
+          "text": "Statická nelinearita s pamäťou"
+        },
+        {
+          "key": "C",
+          "text": "Dynamická nelinearita s tlmením"
+        },
+        {
+          "key": "D",
+          "text": "Dynamická nelinearita bez tlmenia"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Statická nelinearita s pamäťou",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Kam by ste zaradili nelinearitu typu vôľa v zuboch ? Statická nelinearita bez pamäte Statická nelinearita s pamäťou Dynamická nelinearita s tlmením Dynamická nelinearita bez tlmenia B) Statická nelinearita s pamäťou"
+    },
+    {
+      "id": "q011",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čo je to Coulombovo trenie ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Viskózne trenie"
+        },
+        {
+          "key": "B",
+          "text": "Suché trenie"
+        },
+        {
+          "key": "C",
+          "text": "Valivé trenie"
+        },
+        {
+          "key": "D",
+          "text": "Ani jedno z uvedených"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Suché trenie",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Čo je to Coulombovo trenie ? Viskózne trenie Suché trenie Valivé trenie Ani jedno z uvedených B) Suché trenie"
+    },
+    {
+      "id": "q012",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Aká je prevodová charakteristika ideálneho usmerňovača ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Lineárna"
+        },
+        {
+          "key": "B",
+          "text": "Symetrická"
+        },
+        {
+          "key": "C",
+          "text": "Nesymetrická"
+        },
+        {
+          "key": "D",
+          "text": "Kvadratická"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Nesymetrická",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Aká je prevodová charakteristika ideálneho usmerňovača ? Lineárna Symetrická Nesymetrická Kvadratická C) Nesymetrická"
+    },
+    {
+      "id": "q013",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Akou funkciou je daná prevodová charakteristika fyzikálneho kyvadla ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "kvadratickou"
+        },
+        {
+          "key": "B",
+          "text": "sin"
+        },
+        {
+          "key": "C",
+          "text": "arcsin"
+        },
+        {
+          "key": "D",
+          "text": "exponenciálnou"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** arcsin",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 2
+      },
+      "searchText": "Akou funkciou je daná prevodová charakteristika fyzikálneho kyvadla ? kvadratickou sin arcsin exponenciálnou C) arcsin"
+    },
+    {
+      "id": "q014",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čo je to Lagrangeova funkcia ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Celková kinetická energia MIMO systému"
+        },
+        {
+          "key": "B",
+          "text": "Celková potenciálna energia MIMO systému"
+        },
+        {
+          "key": "C",
+          "text": "Zovšeobecnená funkcia lineárneho dynamického systému, ktorý je ekvivalentný DP filtru"
+        },
+        {
+          "key": "D",
+          "text": "Rozdiel medzi kinetickou a potenciálnou energiou MIMO systému"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Rozdiel medzi kinetickou a potenciálnou energiou MIMO systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Čo je to Lagrangeova funkcia ? Celková kinetická energia MIMO systému Celková potenciálna energia MIMO systému Zovšeobecnená funkcia lineárneho dynamického systému, ktorý je ekvivalentný DP filtru Rozdiel medzi kinetickou a potenciálnou energiou MIMO systému D) Rozdiel medzi kinetickou a potenciálnou energiou MIMO systému"
+    },
+    {
+      "id": "q015",
+      "topicId": "t1",
+      "topic": "Základné pojmy, kategórie, vlastnosti a typy statických nelinearít",
+      "question": "Čo ovplyvňuje šírka hysteréznej charakteristiky hysterézneho regulátora prúdu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Veľkosť jednosmernej zložky a frekvenciu kmitov prúdu"
+        },
+        {
+          "key": "B",
+          "text": "Amplitúdu a frekvenciu kmitov prúdu"
+        },
+        {
+          "key": "C",
+          "text": "Amplitúdu kmitov a veľkosť jednosmernej zložky prúdu"
+        },
+        {
+          "key": "D",
+          "text": "Veľkosť jednosmernej zložky, amplitúdu a frekvenciu kmitov"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Amplitúdu a frekvenciu kmitov prúdu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Čo ovplyvňuje šírka hysteréznej charakteristiky hysterézneho regulátora prúdu ? Veľkosť jednosmernej zložky a frekvenciu kmitov prúdu Amplitúdu a frekvenciu kmitov prúdu Amplitúdu kmitov a veľkosť jednosmernej zložky prúdu Veľkosť jednosmernej zložky, amplitúdu a frekvenciu kmitov B) Amplitúdu a frekvenciu kmitov prúdu"
+    },
+    {
+      "id": "q016",
+      "topicId": "t2",
+      "topic": "Metóda stavového/fázového priestoru/roviny",
+      "question": "Čo je to metóda stavového priestoru ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Metóda analýzy rovnovážnych stavov"
+        },
+        {
+          "key": "B",
+          "text": "Metóda analýzy nelineárnych systémov"
+        },
+        {
+          "key": "C",
+          "text": "Metóda analýzy statických nelinearít"
+        },
+        {
+          "key": "D",
+          "text": "Metóda analýzy nelineárnych dynamických systémov druhého rádu"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Metóda analýzy nelineárnych systémov",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Čo je to metóda stavového priestoru ? Metóda analýzy rovnovážnych stavov Metóda analýzy nelineárnych systémov Metóda analýzy statických nelinearít Metóda analýzy nelineárnych dynamických systémov druhého rádu B) Metóda analýzy nelineárnych systémov"
+    },
+    {
+      "id": "q017",
+      "topicId": "t2",
+      "topic": "Metóda stavového/fázového priestoru/roviny",
+      "question": "Čo je to vnútorný model systému ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bloková schéma vnútorných regulačných slučiek systému"
+        },
+        {
+          "key": "B",
+          "text": "Stavový model systému"
+        },
+        {
+          "key": "C",
+          "text": "Model otvoreného regulačného obvodu"
+        },
+        {
+          "key": "D",
+          "text": "Ani jedno z uvedených"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Stavový model systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Čo je to vnútorný model systému ? Bloková schéma vnútorných regulačných slučiek systému Stavový model systému Model otvoreného regulačného obvodu Ani jedno z uvedených B) Stavový model systému"
+    },
+    {
+      "id": "q018",
+      "topicId": "t2",
+      "topic": "Metóda stavového/fázového priestoru/roviny",
+      "question": "Čo tvorí prvky stavového vektora nelineárneho dynamického systému ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Vstup systému a jeho derivácie $(u, \\dot{u})$"
+        },
+        {
+          "key": "B",
+          "text": "Výstup systému a jeho derivácie $(y, \\dot{y})$"
+        },
+        {
+          "key": "C",
+          "text": "Výstup nelineárnej statickej charakteristiky a výstup lineárnej časti dynamického systému $(u, y)$"
+        },
+        {
+          "key": "D",
+          "text": "Stav fyzikálnych veličín vystupujúcich v systéme"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Výstup systému a jeho derivácie $(y, \\dot{y})$",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Čo tvorí prvky stavového vektora nelineárneho dynamického systému ? Vstup systému a jeho derivácie (u, dot{u}) Výstup systému a jeho derivácie (y, dot{y}) Výstup nelineárnej statickej charakteristiky a výstup lineárnej časti dynamického systému (u, y) Stav fyzikálnych veličín vystupujúcich v systéme B) Výstup systému a jeho derivácie (y, dot{y})"
+    },
+    {
+      "id": "q019",
+      "topicId": "t2",
+      "topic": "Metóda stavového/fázového priestoru/roviny",
+      "question": "Čo je podmienkou použitia metódy stavovej roviny ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Existencia rovnovážneho stavu nelineárneho dynamického systému"
+        },
+        {
+          "key": "B",
+          "text": "Dobré filtračné vlastnosti dynamického systému"
+        },
+        {
+          "key": "C",
+          "text": "Dynamika systému opísaná diferenciálnymi rovnicami druhého rádu"
+        },
+        {
+          "key": "D",
+          "text": "Zlé filtračné vlastnosti dynamického systému"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Dynamika systému opísaná diferenciálnymi rovnicami druhého rádu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Čo je podmienkou použitia metódy stavovej roviny ? Existencia rovnovážneho stavu nelineárneho dynamického systému Dobré filtračné vlastnosti dynamického systému Dynamika systému opísaná diferenciálnymi rovnicami druhého rádu Zlé filtračné vlastnosti dynamického systému C) Dynamika systému opísaná diferenciálnymi rovnicami druhého rádu"
+    },
+    {
+      "id": "q020",
+      "topicId": "t2",
+      "topic": "Metóda stavového/fázového priestoru/roviny",
+      "question": "Na čo slúži Bendixsonovo kritérium ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Na vyšetrovanie stability limitných cyklov"
+        },
+        {
+          "key": "B",
+          "text": "Je to postačujúca podmienka existencie limitných cyklov"
+        },
+        {
+          "key": "C",
+          "text": "Je to postačujúca podmienka existencie rovnovážnych stavov"
+        },
+        {
+          "key": "D",
+          "text": "Na vyšetrovanie stability rovnovážnych stavov"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Je to postačujúca podmienka existencie limitných cyklov",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 3
+      },
+      "searchText": "Na čo slúži Bendixsonovo kritérium ? Na vyšetrovanie stability limitných cyklov Je to postačujúca podmienka existencie limitných cyklov Je to postačujúca podmienka existencie rovnovážnych stavov Na vyšetrovanie stability rovnovážnych stavov B) Je to postačujúca podmienka existencie limitných cyklov"
+    },
+    {
+      "id": "q021",
+      "topicId": "t2",
+      "topic": "Metóda stavového/fázového priestoru/roviny",
+      "question": "Pre aké systémy sa dá použiť Bendixsonovo kritérium ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pre nestabilné nelineárne systémy 1. rádu"
+        },
+        {
+          "key": "B",
+          "text": "Pre stabilné nelineárne systémy 1. rádu"
+        },
+        {
+          "key": "C",
+          "text": "Pre stabilné nelineárne systémy 2. rádu"
+        },
+        {
+          "key": "D",
+          "text": "Pre nestabilné nelineárne systémy 2. rádu"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Pre stabilné nelineárne systémy 2. rádu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Pre aké systémy sa dá použiť Bendixsonovo kritérium ? Pre nestabilné nelineárne systémy 1. rádu Pre stabilné nelineárne systémy 1. rádu Pre stabilné nelineárne systémy 2. rádu Pre nestabilné nelineárne systémy 2. rádu C) Pre stabilné nelineárne systémy 2. rádu"
+    },
+    {
+      "id": "q022",
+      "topicId": "t3",
+      "topic": "Izoklíny",
+      "question": "Čo je to rovnica izoklín ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rovnica asymptot systému"
+        },
+        {
+          "key": "B",
+          "text": "Rovnica konštantných smerníc trajektórií systému"
+        },
+        {
+          "key": "C",
+          "text": "Rovnica rovnovážnych stavov systému"
+        },
+        {
+          "key": "D",
+          "text": "Rovnica stavových trajektórií systému"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Rovnica konštantných smerníc trajektórií systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Čo je to rovnica izoklín ? Rovnica asymptot systému Rovnica konštantných smerníc trajektórií systému Rovnica rovnovážnych stavov systému Rovnica stavových trajektórií systému B) Rovnica konštantných smerníc trajektórií systému"
+    },
+    {
+      "id": "q023",
+      "topicId": "t3",
+      "topic": "Izoklíny",
+      "question": "Čo je riešením rovnice izoklín ako diferenciálnej rovnice ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Stavová trajektória systému"
+        },
+        {
+          "key": "B",
+          "text": "Rovnovážne stavy systému"
+        },
+        {
+          "key": "C",
+          "text": "Asymptoty systému"
+        },
+        {
+          "key": "D",
+          "text": "Smernice trajektórií systému"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Stavová trajektória systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Čo je riešením rovnice izoklín ako diferenciálnej rovnice ? Stavová trajektória systému Rovnovážne stavy systému Asymptoty systému Smernice trajektórií systému A) Stavová trajektória systému"
+    },
+    {
+      "id": "q024",
+      "topicId": "t3",
+      "topic": "Izoklíny",
+      "question": "Čo je to stavový portrét systému ?",
+      "options": [],
+      "correct": null,
+      "answer": "Sieť stavových trajektórií systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Čo je to stavový portrét systému ?  Sieť stavových trajektórií systému"
+    },
+    {
+      "id": "q025",
+      "topicId": "t4",
+      "topic": "Typy rovnovážnych stavov a iné nelineárne systémy",
+      "question": "Ktorý z týchto fázových portrétov je zaručene nestabilný ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Uzol"
+        },
+        {
+          "key": "B",
+          "text": "Stred"
+        },
+        {
+          "key": "C",
+          "text": "Sedlo"
+        },
+        {
+          "key": "D",
+          "text": "Ohnisko"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Sedlo",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Ktorý z týchto fázových portrétov je zaručene nestabilný ? Uzol Stred Sedlo Ohnisko C) Sedlo"
+    },
+    {
+      "id": "q026",
+      "topicId": "t4",
+      "topic": "Typy rovnovážnych stavov a iné nelineárne systémy",
+      "question": "Aký fyzikálny princíp opisuje Van der Polova rovnica ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tlmenie"
+        },
+        {
+          "key": "B",
+          "text": "Oscilátor"
+        },
+        {
+          "key": "C",
+          "text": "Kyvadlo"
+        },
+        {
+          "key": "D",
+          "text": "Dvojité kyvadlo"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Oscilátor",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Aký fyzikálny princíp opisuje Van der Polova rovnica ? Tlmenie Oscilátor Kyvadlo Dvojité kyvadlo B) Oscilátor"
+    },
+    {
+      "id": "q027",
+      "topicId": "t4",
+      "topic": "Typy rovnovážnych stavov a iné nelineárne systémy",
+      "question": "Koľko trajektórií v stavovej rovine má NS dynamický prvého rádu $\\frac{dy}{dt} + y^2 = 1$ ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dve"
+        },
+        {
+          "key": "B",
+          "text": "Jednu"
+        },
+        {
+          "key": "C",
+          "text": "Žiadnu"
+        },
+        {
+          "key": "D",
+          "text": "Celú sieť"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Jednu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 4
+      },
+      "searchText": "Koľko trajektórií v stavovej rovine má NS dynamický prvého rádu frac{dy}{dt} + y^2 = 1 ? Dve Jednu Žiadnu Celú sieť B) Jednu"
+    },
+    {
+      "id": "q028",
+      "topicId": "t5",
+      "topic": "Nelineárne riadenie vo fázovej rovine a kĺzavý režim",
+      "question": "Ako by ste charakterizovali kĺzavý režim v systéme ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ako vysokofrekvenčné oscilácie systému"
+        },
+        {
+          "key": "B",
+          "text": "Ako fázový posun medzi výstupom a vstupom systému"
+        },
+        {
+          "key": "C",
+          "text": "Ako nestabilitu systému"
+        },
+        {
+          "key": "D",
+          "text": "Ako nízkofrekvenčné oscilácie systému"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Ako vysokofrekvenčné oscilácie systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 5
+      },
+      "searchText": "Ako by ste charakterizovali kĺzavý režim v systéme ? Ako vysokofrekvenčné oscilácie systému Ako fázový posun medzi výstupom a vstupom systému Ako nestabilitu systému Ako nízkofrekvenčné oscilácie systému A) Ako vysokofrekvenčné oscilácie systému"
+    },
+    {
+      "id": "q029",
+      "topicId": "t5",
+      "topic": "Nelineárne riadenie vo fázovej rovine a kĺzavý režim",
+      "question": "Ako znie podmienka vzniku kĺzavého režimu, ak F je prepínacia funkcia a $F'$ je jej derivácia ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "$F \\cdot F' < 0$"
+        },
+        {
+          "key": "B",
+          "text": "$F + F' < 0$"
+        },
+        {
+          "key": "C",
+          "text": "$F \\cdot F' > 0$"
+        },
+        {
+          "key": "D",
+          "text": "$F + F' > 0$"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** $F \\cdot F' < 0$",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 5
+      },
+      "searchText": "Ako znie podmienka vzniku kĺzavého režimu, ak F je prepínacia funkcia a F' je jej derivácia ? F cdot F' < 0 F + F' < 0 F cdot F' > 0 F + F' > 0 A) F cdot F' < 0"
+    },
+    {
+      "id": "q030",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je to metóda harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Metóda analýzy rovnovážnych stavov"
+        },
+        {
+          "key": "B",
+          "text": "Metóda analýzy nelineárnych systémov"
+        },
+        {
+          "key": "C",
+          "text": "Metóda analýzy nelineárnych dynamických systémov"
+        },
+        {
+          "key": "D",
+          "text": "Metóda analýzy statických nelinearít"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Metóda analýzy nelineárnych systémov",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 5
+      },
+      "searchText": "Čo je to metóda harmonickej rovnováhy ? Metóda analýzy rovnovážnych stavov Metóda analýzy nelineárnych systémov Metóda analýzy nelineárnych dynamických systémov Metóda analýzy statických nelinearít B) Metóda analýzy nelineárnych systémov"
+    },
+    {
+      "id": "q031",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je to metóda ekvivalentných prenosov ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1. metóda Ljapunova"
+        },
+        {
+          "key": "B",
+          "text": "2. metóda Ljapunova"
+        },
+        {
+          "key": "C",
+          "text": "Metóda stavového priestoru"
+        },
+        {
+          "key": "D",
+          "text": "Metóda harmonickej rovnováhy"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Metóda harmonickej rovnováhy",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 5
+      },
+      "searchText": "Čo je to metóda ekvivalentných prenosov ? 1. metóda Ljapunova 2. metóda Ljapunova Metóda stavového priestoru Metóda harmonickej rovnováhy D) Metóda harmonickej rovnováhy"
+    },
+    {
+      "id": "q032",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Kam by ste zaradili metódu harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Medzi frekvenčné metódy"
+        },
+        {
+          "key": "B",
+          "text": "Medzi stabilné metódy"
+        },
+        {
+          "key": "C",
+          "text": "Medzi fázové metódy"
+        },
+        {
+          "key": "D",
+          "text": "Medzi nestabilné metódy"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Medzi frekvenčné metódy",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 5
+      },
+      "searchText": "Kam by ste zaradili metódu harmonickej rovnováhy ? Medzi frekvenčné metódy Medzi stabilné metódy Medzi fázové metódy Medzi nestabilné metódy A) Medzi frekvenčné metódy"
+    },
+    {
+      "id": "q033",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je výsledkom použitia metódy harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Určenie stability limitných cyklov"
+        },
+        {
+          "key": "B",
+          "text": "Určenie počtu a stability limitných cyklov"
+        },
+        {
+          "key": "C",
+          "text": "Určenie počtu limitných cyklov"
+        },
+        {
+          "key": "D",
+          "text": "Určenie fázového portrétu systému"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Určenie počtu a stability limitných cyklov",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 5
+      },
+      "searchText": "Čo je výsledkom použitia metódy harmonickej rovnováhy ? Určenie stability limitných cyklov Určenie počtu a stability limitných cyklov Určenie počtu limitných cyklov Určenie fázového portrétu systému B) Určenie počtu a stability limitných cyklov"
+    },
+    {
+      "id": "q034",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je podmienkou použitia metódy harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dobré filtračné vlastnosti dynamického systému"
+        },
+        {
+          "key": "B",
+          "text": "Zlé filtračné vlastnosti dynamického systému"
+        },
+        {
+          "key": "C",
+          "text": "Existencia rovnovážneho stavu nelineárneho dynamického systému"
+        },
+        {
+          "key": "D",
+          "text": "Dynamika systému opísaná diferenciálnymi rovnicami druhého rádu"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Dobré filtračné vlastnosti dynamického systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Čo je podmienkou použitia metódy harmonickej rovnováhy ? Dobré filtračné vlastnosti dynamického systému Zlé filtračné vlastnosti dynamického systému Existencia rovnovážneho stavu nelineárneho dynamického systému Dynamika systému opísaná diferenciálnymi rovnicami druhého rádu A) Dobré filtračné vlastnosti dynamického systému"
+    },
+    {
+      "id": "q035",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je podmienkou použitia metódy harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fázový posun ekvivalentného prenosu je 180 stupňov"
+        },
+        {
+          "key": "B",
+          "text": "Fázový posun uzavretého obvodu je 180 stupňov"
+        },
+        {
+          "key": "C",
+          "text": "Fázový posun otvoreného obvodu je 180 stupňov"
+        },
+        {
+          "key": "D",
+          "text": "Fázový posun lineárneho dynamického systému je 180 stupňov"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Fázový posun otvoreného obvodu je 180 stupňov",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Čo je podmienkou použitia metódy harmonickej rovnováhy ? Fázový posun ekvivalentného prenosu je 180 stupňov Fázový posun uzavretého obvodu je 180 stupňov Fázový posun otvoreného obvodu je 180 stupňov Fázový posun lineárneho dynamického systému je 180 stupňov C) Fázový posun otvoreného obvodu je 180 stupňov"
+    },
+    {
+      "id": "q036",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je podmienkou použitia metódy harmonickej rovnováhy ?",
+      "options": [],
+      "correct": null,
+      "answer": "Jednotkové zosilnenie otvoreného obvodu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Čo je podmienkou použitia metódy harmonickej rovnováhy ?  Jednotkové zosilnenie otvoreného obvodu"
+    },
+    {
+      "id": "q037",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Aké podmienky musí spĺňať nelineárny člen pri použití metódy harmonickej rovnováhy ?",
+      "options": [],
+      "correct": null,
+      "answer": "Musí byť statický, symetrický s nepárnou prevodovou charakteristikou.",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Aké podmienky musí spĺňať nelineárny člen pri použití metódy harmonickej rovnováhy ?  Musí byť statický, symetrický s nepárnou prevodovou charakteristikou."
+    },
+    {
+      "id": "q038",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Aké podmienky musí spĺňať dynamický systém pri použití metódy harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Musí byť nelineárny, nestabilný s dobrými filtračnými vlastnosťami"
+        },
+        {
+          "key": "B",
+          "text": "Musí byť lineárny, nestabilný s dobrými filtračnými vlastnosťami"
+        },
+        {
+          "key": "C",
+          "text": "Musí byť nelineárny, stabilný s dobrými filtračnými vlastnosťami"
+        },
+        {
+          "key": "D",
+          "text": "Musí byť lineárny, stabilný s dobrými filtračnými vlastnosťami"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Musí byť lineárny, stabilný s dobrými filtračnými vlastnosťami",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Aké podmienky musí spĺňať dynamický systém pri použití metódy harmonickej rovnováhy ? Musí byť nelineárny, nestabilný s dobrými filtračnými vlastnosťami Musí byť lineárny, nestabilný s dobrými filtračnými vlastnosťami Musí byť nelineárny, stabilný s dobrými filtračnými vlastnosťami Musí byť lineárny, stabilný s dobrými filtračnými vlastnosťami D) Musí byť lineárny, stabilný s dobrými filtračnými vlastnosťami"
+    },
+    {
+      "id": "q039",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je podstatou metódy harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Návrh parametrov nelineárneho systému, ktorým sa šíri harmonický signál"
+        },
+        {
+          "key": "B",
+          "text": "Linearizácia dynamického systému, ktorým sa šíri harmonický signál"
+        },
+        {
+          "key": "C",
+          "text": "Návrh parametrov dynamického systému, ktorým sa šíri harmonický signál"
+        },
+        {
+          "key": "D",
+          "text": "Linearizácia nelineárneho systému, ktorým sa šíri harmonický signál"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Linearizácia nelineárneho systému, ktorým sa šíri harmonický signál",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Čo je podstatou metódy harmonickej rovnováhy ? Návrh parametrov nelineárneho systému, ktorým sa šíri harmonický signál Linearizácia dynamického systému, ktorým sa šíri harmonický signál Návrh parametrov dynamického systému, ktorým sa šíri harmonický signál Linearizácia nelineárneho systému, ktorým sa šíri harmonický signál D) Linearizácia nelineárneho systému, ktorým sa šíri harmonický signál"
+    },
+    {
+      "id": "q040",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Aká štruktúra obvodu odpovedá použitiu metódy harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Paralelné zapojenie statickej nelinearity a lineárneho dynamického systému"
+        },
+        {
+          "key": "B",
+          "text": "Sériové zapojenie statickej nelinearity a lineárneho dynamického systému"
+        },
+        {
+          "key": "C",
+          "text": "Ani jedna z uvedených"
+        },
+        {
+          "key": "D",
+          "text": "Antiparalelné zapojenie statickej nelinearity a lineárneho dynamického systému"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Sériové zapojenie statickej nelinearity a lineárneho dynamického systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Aká štruktúra obvodu odpovedá použitiu metódy harmonickej rovnováhy ? Paralelné zapojenie statickej nelinearity a lineárneho dynamického systému Sériové zapojenie statickej nelinearity a lineárneho dynamického systému Ani jedna z uvedených Antiparalelné zapojenie statickej nelinearity a lineárneho dynamického systému B) Sériové zapojenie statickej nelinearity a lineárneho dynamického systému"
+    },
+    {
+      "id": "q041",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo zabezpečuje záporná spätná väzba v uzavretom obvode pri metóde harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Záporné zosilnenie uzavretého obvodu."
+        },
+        {
+          "key": "B",
+          "text": "Stabilizuje uzavretý obvod"
+        },
+        {
+          "key": "C",
+          "text": "Jednotkové zosilnenie uzavretého obvodu"
+        },
+        {
+          "key": "D",
+          "text": "Otáča fázu o 180 stupňov"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Otáča fázu o 180 stupňov",
+      "points": null,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 6
+      },
+      "searchText": "Čo zabezpečuje záporná spätná väzba v uzavretom obvode pri metóde harmonickej rovnováhy ? Záporné zosilnenie uzavretého obvodu. Stabilizuje uzavretý obvod Jednotkové zosilnenie uzavretého obvodu Otáča fázu o 180 stupňov D) Otáča fázu o 180 stupňov"
+    },
+    {
+      "id": "q042",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je to ekvivalentný prenos ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Prenos dolnopriepustného filtra pri metóde harmonickej rovnováhy"
+        },
+        {
+          "key": "B",
+          "text": "Prenos dynamického systému linearizovaného pre prvú harmonickú"
+        },
+        {
+          "key": "C",
+          "text": "Prenos nelinearity linearizovanej pre prvú harmonickú"
+        },
+        {
+          "key": "D",
+          "text": "Prenos dynamického systému pri metóde ekvivalentných prenosov"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Prenos nelinearity linearizovanej pre prvú harmonickú",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Čo je to ekvivalentný prenos ? Prenos dolnopriepustného filtra pri metóde harmonickej rovnováhy Prenos dynamického systému linearizovaného pre prvú harmonickú Prenos nelinearity linearizovanej pre prvú harmonickú Prenos dynamického systému pri metóde ekvivalentných prenosov C) Prenos nelinearity linearizovanej pre prvú harmonickú"
+    },
+    {
+      "id": "q043",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo je to ekvivalentný útlm ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Prevrátená hodnota prenosovej funkcie lineárneho dynamického systému"
+        },
+        {
+          "key": "B",
+          "text": "Prevrátená hodnota prenosu otvoreného nelineárneho obvodu"
+        },
+        {
+          "key": "C",
+          "text": "Prenosová funkcia lineárneho dynamického systému, ktorý je ekvivalentný DP filtru."
+        },
+        {
+          "key": "D",
+          "text": "Prevrátená hodnota ekvivalentného prenosu"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** Prevrátená hodnota ekvivalentného prenosu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Čo je to ekvivalentný útlm ? Prevrátená hodnota prenosovej funkcie lineárneho dynamického systému Prevrátená hodnota prenosu otvoreného nelineárneho obvodu Prenosová funkcia lineárneho dynamického systému, ktorý je ekvivalentný DP filtru. Prevrátená hodnota ekvivalentného prenosu D) Prevrátená hodnota ekvivalentného prenosu"
+    },
+    {
+      "id": "q044",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čo sa využíva pri výpočte ekvivalentného prenosu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Laplaceova transformácia"
+        },
+        {
+          "key": "B",
+          "text": "Fourierova transformácia"
+        },
+        {
+          "key": "C",
+          "text": "Rozvoj do Fourierovho radu"
+        },
+        {
+          "key": "D",
+          "text": "Rozvoj do Taylorovho radu"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Rozvoj do Fourierovho radu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Čo sa využíva pri výpočte ekvivalentného prenosu ? Laplaceova transformácia Fourierova transformácia Rozvoj do Fourierovho radu Rozvoj do Taylorovho radu C) Rozvoj do Fourierovho radu"
+    },
+    {
+      "id": "q045",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čím sa nahrádza nelineárny člen pri metóde harmonickej rovnováhy ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nelineárnym statickým členom prenášajúcim len prvú harmonickú"
+        },
+        {
+          "key": "B",
+          "text": "Nelineárnym dynamickým členom prenášajúcim len prvú harmonickú"
+        },
+        {
+          "key": "C",
+          "text": "Lineárnym statickým členom prenášajúcim len prvú harmonickú"
+        },
+        {
+          "key": "D",
+          "text": "Lineárnym dynamickým členom prenášajúcim len prvú harmonickú"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Lineárnym statickým členom prenášajúcim len prvú harmonickú",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Čím sa nahrádza nelineárny člen pri metóde harmonickej rovnováhy ? Nelineárnym statickým členom prenášajúcim len prvú harmonickú Nelineárnym dynamickým členom prenášajúcim len prvú harmonickú Lineárnym statickým členom prenášajúcim len prvú harmonickú Lineárnym dynamickým členom prenášajúcim len prvú harmonickú C) Lineárnym statickým členom prenášajúcim len prvú harmonickú"
+    },
+    {
+      "id": "q046",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Akú funkciu má dynamický systém pri použití metódy ekvivalentných prenosov ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Funkciu pásmového filtra"
+        },
+        {
+          "key": "B",
+          "text": "Funkciu dolnopriepustného filtra"
+        },
+        {
+          "key": "C",
+          "text": "Funkciu nelineárneho filtra"
+        },
+        {
+          "key": "D",
+          "text": "Funkciu hornopriepustného filtra"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Funkciu dolnopriepustného filtra",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Akú funkciu má dynamický systém pri použití metódy ekvivalentných prenosov ? Funkciu pásmového filtra Funkciu dolnopriepustného filtra Funkciu nelineárneho filtra Funkciu hornopriepustného filtra B) Funkciu dolnopriepustného filtra"
+    },
+    {
+      "id": "q047",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Na ktorý signál sa aplikuje výpočet ekvivalentného prenosu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Na signál vystupujúci zo statickej nelinearity"
+        },
+        {
+          "key": "B",
+          "text": "Na signál vstupujúci do dynamickej nelinearity"
+        },
+        {
+          "key": "C",
+          "text": "Na signál vstupujúci do statickej nelinearity"
+        },
+        {
+          "key": "D",
+          "text": "Na signál vystupujúci z dynamickej nelinearity"
+        }
+      ],
+      "correct": "A",
+      "answer": "**A)** Na signál vystupujúci zo statickej nelinearity",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Na ktorý signál sa aplikuje výpočet ekvivalentného prenosu ? Na signál vystupujúci zo statickej nelinearity Na signál vstupujúci do dynamickej nelinearity Na signál vstupujúci do statickej nelinearity Na signál vystupujúci z dynamickej nelinearity A) Na signál vystupujúci zo statickej nelinearity"
+    },
+    {
+      "id": "q048",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Ako znie podmienka vzniku ustálených kmitov, ak $G(jw)$ je frekvenčný prenos lineárneho dynamického systému a $G_N(A)$ je ekvivalentný prenos nelinearity ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "$G(jw) = G_N(A)$"
+        },
+        {
+          "key": "B",
+          "text": "$G(jw)G_N(A) = 1$"
+        },
+        {
+          "key": "C",
+          "text": "$G(jw)G_N(A) = -1$"
+        },
+        {
+          "key": "D",
+          "text": "$G(jw) = -G_N(A)$"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** $G(jw)G_N(A) = -1$",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 7
+      },
+      "searchText": "Ako znie podmienka vzniku ustálených kmitov, ak G(jw) je frekvenčný prenos lineárneho dynamického systému a G_N(A) je ekvivalentný prenos nelinearity ? G(jw) = G_N(A) G(jw)G_N(A) = 1 G(jw)G_N(A) = -1 G(jw) = -G_N(A) C) G(jw)G_N(A) = -1"
+    },
+    {
+      "id": "q049",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Ktorý zápis podmienky vzniku ustálených kmitov je správny, ak $G(jw)$ je frekvenčný prenos lineárneho dynamického systému a $G_N(A)$ je ekvivalentný prenos nelinearity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "$\\mathrm{Re}(G(jw)) = 0$ a $\\mathrm{Im}(G_N(A)) = -1$"
+        },
+        {
+          "key": "B",
+          "text": "$\\mathrm{Re}(G(jw)) = -1$ a $\\mathrm{Im}(G_N(A)) = 0$"
+        },
+        {
+          "key": "C",
+          "text": "$\\mathrm{Re}(G(jw)G_N(A)) = -1$ a $\\mathrm{Im}(G(jw)G_N(A)) = 0$"
+        },
+        {
+          "key": "D",
+          "text": "$\\mathrm{Re}(G(jw)G_N(A)) = 0$ a $\\mathrm{Im}(G(jw)G_N(A)) = -1$"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** $\\mathrm{Re}(G(jw)G_N(A)) = -1$ a $\\mathrm{Im}(G(jw)G_N(A)) = 0$",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 8
+      },
+      "searchText": "Ktorý zápis podmienky vzniku ustálených kmitov je správny, ak G(jw) je frekvenčný prenos lineárneho dynamického systému a G_N(A) je ekvivalentný prenos nelinearity? mathrm{Re}(G(jw)) = 0 a mathrm{Im}(G_N(A)) = -1 mathrm{Re}(G(jw)) = -1 a mathrm{Im}(G_N(A)) = 0 mathrm{Re}(G(jw)G_N(A)) = -1 a mathrm{Im}(G(jw)G_N(A)) = 0 mathrm{Re}(G(jw)G_N(A)) = 0 a mathrm{Im}(G(jw)G_N(A)) = -1 C) mathrm{Re}(G(jw)G_N(A)) = -1 a mathrm{Im}(G(jw)G_N(A)) = 0"
+    },
+    {
+      "id": "q050",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Ktorý zápis podmienky vzniku ustálených kmitov je správny, ak $G(jw)$ je frekvenčný prenos lineárneho dynamického systému a $G_N(A)$ je ekvivalentný prenos nelinearity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "$\\mathrm{Re}(G(jw)) = \\mathrm{Re}(1/G_N(A))$ a $\\mathrm{Im}(G(jw)) = \\mathrm{Im}(1/G_N(A))$"
+        },
+        {
+          "key": "B",
+          "text": "$\\mathrm{Re}(G(jw)) = \\mathrm{Re}(G_N(A))$ a $\\mathrm{Im}(G(jw)) = \\mathrm{Im}(G_N(A))$"
+        },
+        {
+          "key": "C",
+          "text": "$\\mathrm{Re}(G(jw)) = \\mathrm{Re}(-G_N(A))$ a $\\mathrm{Im}(G(jw)) = \\mathrm{Im}(-G_N(A))$"
+        },
+        {
+          "key": "D",
+          "text": "$\\mathrm{Re}(G(jw)) = \\mathrm{Re}(-1/G_N(A))$ a $\\mathrm{Im}(G(jw)) = \\mathrm{Im}(-1/G_N(A))$"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** $\\mathrm{Re}(G(jw)) = \\mathrm{Re}(-1/G_N(A))$ a $\\mathrm{Im}(G(jw)) = \\mathrm{Im}(-1/G_N(A))$",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 8
+      },
+      "searchText": "Ktorý zápis podmienky vzniku ustálených kmitov je správny, ak G(jw) je frekvenčný prenos lineárneho dynamického systému a G_N(A) je ekvivalentný prenos nelinearity? mathrm{Re}(G(jw)) = mathrm{Re}(1/G_N(A)) a mathrm{Im}(G(jw)) = mathrm{Im}(1/G_N(A)) mathrm{Re}(G(jw)) = mathrm{Re}(G_N(A)) a mathrm{Im}(G(jw)) = mathrm{Im}(G_N(A)) mathrm{Re}(G(jw)) = mathrm{Re}(-G_N(A)) a mathrm{Im}(G(jw)) = mathrm{Im}(-G_N(A)) mathrm{Re}(G(jw)) = mathrm{Re}(-1/G_N(A)) a mathrm{Im}(G(jw)) = mathrm{Im}(-1/G_N(A)) D) mathrm{Re}(G(jw)) = mathrm{Re}(-1/G_N(A)) a mathrm{Im}(G(jw)) = mathrm{Im}(-1/G_N(A))"
+    },
+    {
+      "id": "q051",
+      "topicId": "t6",
+      "topic": "Metóda harmonickej rovnováhy / linearizácie / ekvivalentného prenosu",
+      "question": "Čím je daný ekvivalentný prenos nelineárneho člena ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pomerom komplexnej amplitúdy vstupného harmonického signálu k amplitúde prvej harmonickej zložky výstupu z nelinearity"
+        },
+        {
+          "key": "B",
+          "text": "Pomerom komplexnej amplitúdy prvej harmonickej zložky výstupu z nelinearity k amplitúde vstupného harmonického signálu"
+        },
+        {
+          "key": "C",
+          "text": "Pomerom amplitúdy vstupného harmonického signálu ku komplexnej amplitúde prvej harmonickej zložky výstupu z nelinearity"
+        },
+        {
+          "key": "D",
+          "text": "Pomerom amplitúdy prvej harmonickej zložky výstupu z nelinearity ku komplexnej amplitúde vstupného harmonického signálu"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Pomerom komplexnej amplitúdy prvej harmonickej zložky výstupu z nelinearity k amplitúde vstupného harmonického signálu",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 8
+      },
+      "searchText": "Čím je daný ekvivalentný prenos nelineárneho člena ? Pomerom komplexnej amplitúdy vstupného harmonického signálu k amplitúde prvej harmonickej zložky výstupu z nelinearity Pomerom komplexnej amplitúdy prvej harmonickej zložky výstupu z nelinearity k amplitúde vstupného harmonického signálu Pomerom amplitúdy vstupného harmonického signálu ku komplexnej amplitúde prvej harmonickej zložky výstupu z nelinearity Pomerom amplitúdy prvej harmonickej zložky výstupu z nelinearity ku komplexnej amplitúde vstupného harmonického signálu B) Pomerom komplexnej amplitúdy prvej harmonickej zložky výstupu z nelinearity k amplitúde vstupného harmonického signálu"
+    },
+    {
+      "id": "q052",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Aký ekvivalentný prenos má nelinearita typu ideálne relé ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Imaginárny"
+        },
+        {
+          "key": "B",
+          "text": "Komplexne združený"
+        },
+        {
+          "key": "C",
+          "text": "Reálny"
+        },
+        {
+          "key": "D",
+          "text": "Komplexný"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Reálny",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 8
+      },
+      "searchText": "Aký ekvivalentný prenos má nelinearita typu ideálne relé ? Imaginárny Komplexne združený Reálny Komplexný C) Reálny"
+    },
+    {
+      "id": "q053",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Aký ekvivalentný prenos má nelinearita s hysteréznou charakteristikou ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reálny"
+        },
+        {
+          "key": "B",
+          "text": "Komplexný"
+        },
+        {
+          "key": "C",
+          "text": "Imaginárny"
+        },
+        {
+          "key": "D",
+          "text": "Komplexne združený"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Komplexný",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 8
+      },
+      "searchText": "Aký ekvivalentný prenos má nelinearita s hysteréznou charakteristikou ? Reálny Komplexný Imaginárny Komplexne združený B) Komplexný"
+    },
+    {
+      "id": "q054",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Čo platí pre nelineárny člen s nepárnou prevodovou charakteristikou ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Žiadna z uvedených zložiek nie je nulová"
+        },
+        {
+          "key": "B",
+          "text": "Jednosmerná zložka ekvivalentného prenosu je nulová"
+        },
+        {
+          "key": "C",
+          "text": "Imaginárna zložka ekvivalentného prenosu je nulová"
+        },
+        {
+          "key": "D",
+          "text": "Reálna zložka ekvivalentného prenosu je nulová"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Jednosmerná zložka ekvivalentného prenosu je nulová",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 8
+      },
+      "searchText": "Čo platí pre nelineárny člen s nepárnou prevodovou charakteristikou ? Žiadna z uvedených zložiek nie je nulová Jednosmerná zložka ekvivalentného prenosu je nulová Imaginárna zložka ekvivalentného prenosu je nulová Reálna zložka ekvivalentného prenosu je nulová B) Jednosmerná zložka ekvivalentného prenosu je nulová"
+    },
+    {
+      "id": "q055",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Čo platí pre nelineárny člen s jednoznačnou statickou charakteristikou ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Žiadna z uvedených zložiek nie je nulová"
+        },
+        {
+          "key": "B",
+          "text": "Jednosmerná zložka ekvivalentného prenosu je nulová"
+        },
+        {
+          "key": "C",
+          "text": "Imaginárna zložka ekvivalentného prenosu je nulová"
+        },
+        {
+          "key": "D",
+          "text": "Reálna zložka ekvivalentného prenosu je nulová"
+        }
+      ],
+      "correct": "C",
+      "answer": "**C)** Imaginárna zložka ekvivalentného prenosu je nulová",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 9
+      },
+      "searchText": "Čo platí pre nelineárny člen s jednoznačnou statickou charakteristikou ? Žiadna z uvedených zložiek nie je nulová Jednosmerná zložka ekvivalentného prenosu je nulová Imaginárna zložka ekvivalentného prenosu je nulová Reálna zložka ekvivalentného prenosu je nulová C) Imaginárna zložka ekvivalentného prenosu je nulová"
+    },
+    {
+      "id": "q056",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika relé s hysterézou a frekvenčná charakteristika lineárneho dynamického systému 1. rádu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1"
+        },
+        {
+          "key": "B",
+          "text": "0"
+        },
+        {
+          "key": "C",
+          "text": "2"
+        },
+        {
+          "key": "D",
+          "text": "3"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** 0",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 9
+      },
+      "searchText": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika relé s hysterézou a frekvenčná charakteristika lineárneho dynamického systému 1. rádu ? 1 0 2 3 B) 0"
+    },
+    {
+      "id": "q057",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika relé s hysterézou a frekvenčná charakteristika lineárneho dynamického systému 2. rádu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "0"
+        },
+        {
+          "key": "C",
+          "text": "3"
+        },
+        {
+          "key": "D",
+          "text": "1"
+        }
+      ],
+      "correct": "D",
+      "answer": "**D)** 1",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 9
+      },
+      "searchText": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika relé s hysterézou a frekvenčná charakteristika lineárneho dynamického systému 2. rádu ? 2 0 3 1 D) 1"
+    },
+    {
+      "id": "q058",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika relé s hysterézou a frekvenčná charakteristika lineárneho dynamického systému 3. rádu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "1"
+        },
+        {
+          "key": "C",
+          "text": "0"
+        },
+        {
+          "key": "D",
+          "text": "3"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** 1",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 9
+      },
+      "searchText": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika relé s hysterézou a frekvenčná charakteristika lineárneho dynamického systému 3. rádu ? 2 1 0 3 B) 1"
+    },
+    {
+      "id": "q059",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika ideálneho relé a frekvenčná charakteristika lineárneho dynamického systému 3. rádu ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "3"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "1"
+        },
+        {
+          "key": "D",
+          "text": "0"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** 2",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 9
+      },
+      "searchText": "Maximálne koľko priesečníkov v komplexnej rovine môže mať charakteristika ideálneho relé a frekvenčná charakteristika lineárneho dynamického systému 3. rádu ? 3 2 1 0 B) 2"
+    },
+    {
+      "id": "q060",
+      "topicId": "t7",
+      "topic": "Aplikácia metódy harmonickej rovnováhy, ekvivalentné prenosy a iné",
+      "question": "Čo je podmienkou vzniku ustálených kmitov pri symetrickej jednoznačnej nelinearite ?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nultý rád prenosovej funkcie lineárneho dynamického systému"
+        },
+        {
+          "key": "B",
+          "text": "Tretí rád prenosovej funkcie lineárneho dynamického systému"
+        },
+        {
+          "key": "C",
+          "text": "Druhý rád prenosovej funkcie lineárneho dynamického systému"
+        },
+        {
+          "key": "D",
+          "text": "Prvý rád prenosovej funkcie lineárneho dynamického systému"
+        }
+      ],
+      "correct": "B",
+      "answer": "**B)** Tretí rád prenosovej funkcie lineárneho dynamického systému",
+      "points": 1,
+      "images": [],
+      "source": {
+        "pdf": "Zápočet_RNS.pdf",
+        "page": 9
+      },
+      "searchText": "Čo je podmienkou vzniku ustálených kmitov pri symetrickej jednoznačnej nelinearite ? Nultý rád prenosovej funkcie lineárneho dynamického systému Tretí rád prenosovej funkcie lineárneho dynamického systému Druhý rád prenosovej funkcie lineárneho dynamického systému Prvý rád prenosovej funkcie lineárneho dynamického systému B) Tretí rád prenosovej funkcie lineárneho dynamického systému"
+    }
+  ]
+}
