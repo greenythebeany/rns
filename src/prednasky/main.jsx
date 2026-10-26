@@ -1,6 +1,7 @@
 import { useDeferredValue, useMemo, useState } from 'react'
 import { mount } from '../shared/Layout.jsx'
 import { fold } from '../shared/fold.js'
+import { plural } from '../shared/plural.js'
 import lectures from '../data/prednasky.json'
 import './prednasky.css'
 
@@ -9,7 +10,7 @@ const sizeFmt = new Intl.NumberFormat('sk-SK', { maximumFractionDigits: 1 })
 const dateFmt = new Intl.DateTimeFormat('sk-SK', { day: 'numeric', month: 'numeric', year: 'numeric' })
 
 function size(bytes) {
-  return bytes >= 1e6 ? `${sizeFmt.format(bytes / 1e6)} MB` : `${Math.max(1, Math.round(bytes / 1e3))} kB`
+  return bytes >= 1e6 ? `${sizeFmt.format(bytes / 1e6)} MB` : `${Math.max(1, Math.round(bytes / 1e3))} kB`
 }
 
 function Prednasky() {
@@ -26,11 +27,11 @@ function Prednasky() {
         <>
           <label className="visually-hidden" htmlFor="lsearch">Hľadať prednášku</label>
           <input
-            id="lsearch" className="field" type="search" placeholder="Hľadať podľa názvu"
+            id="lsearch" className="field" type="search" placeholder="Hľadať podľa názvu…"
             value={query} onChange={(e) => setQuery(e.target.value)} autoComplete="off"
           />
           <p className="muted small" aria-live="polite">
-            {q ? `Nájdené: ${shown.length} z ${lectures.length}` : `${lectures.length} ${lectures.length === 1 ? 'prednáška' : lectures.length < 5 ? 'prednášky' : 'prednášok'}, najnovšia hore`}
+            {q ? `Nájdené: ${shown.length} z ${lectures.length}` : `${plural(lectures.length, 'prednáška', 'prednášky', 'prednášok')}, najnovšia hore`}
           </p>
           {shown.length === 0 ? (
             <p className="empty">Žiadna prednáška nezodpovedá „{query}“.</p>

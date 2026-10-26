@@ -58,7 +58,7 @@ export default function Browse({ progress }) {
         <label className="visually-hidden" htmlFor="qsearch">Hľadať v otázkach a odpovediach</label>
         <input
           id="qsearch" className="field" type="search" autoComplete="off"
-          placeholder="Hľadať v otázkach a odpovediach"
+          placeholder="Hľadať v otázkach a odpovediach…"
           value={query} onChange={(e) => setQuery(e.target.value)}
         />
         <p className="muted small" aria-live="polite">
