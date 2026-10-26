@@ -47,30 +47,6 @@
     "ast_hash": "e0ba67bd1ce60aa442f6af9e2e2c7eca",
     "semantic_hash": ""
   },
-  "prednasky/Riadenie_nelinearnych_systemov_01+02.pdf": {
-    "mtime": 1790237039.6721509,
-    "seen": 1793032090.6230683,
-    "ast_hash": "febfb36225fb12118fbcb90f35e3c682",
-    "semantic_hash": ""
-  },
-  "prednasky/Riadenie_nelinearnych_systemov_03+04.pdf": {
-    "mtime": 1790842023.0338838,
-    "seen": 1793032090.6230683,
-    "ast_hash": "dcf75b93de26dd014bc85ad86c2b2126",
-    "semantic_hash": ""
-  },
-  "prednasky/Riadenie_nelinearnych_systemov_05+06.pdf": {
-    "mtime": 1793031882.7024596,
-    "seen": 1793032090.6230683,
-    "ast_hash": "c2a3a4e3fc1578ac244ea4d9aeafa3ef",
-    "semantic_hash": ""
-  },
-  "prednasky/Riadenie_nelinearnych_systemov_07az12.pdf": {
-    "mtime": 1793031891.0561018,
-    "seen": 1793032090.6230683,
-    "ast_hash": "894afc7d04420d21ad020620f9e2689f",
-    "semantic_hash": ""
-  },
   "design/prototypes/sample.js": {
     "mtime": 1793032689.228039,
     "seen": 1793032824.0577343,
@@ -78,9 +54,9 @@
     "semantic_hash": ""
   },
   "DESIGN.md": {
-    "mtime": 1793032597.2366643,
-    "seen": 1793032824.0577343,
-    "ast_hash": "8e4145c46bf1aadece2a30947e73cb8e",
+    "mtime": 1793033120.5910075,
+    "seen": 1793033452.8553348,
+    "ast_hash": "b4c59bf891be90c411e2e88a944b8fe8",
     "semantic_hash": ""
   },
   "design/prototypes/a-citaren.html": {
@@ -171,6 +147,186 @@
     "mtime": 1793032809.4168718,
     "seen": 1793032824.0577343,
     "ast_hash": "e2026e36ae4eb8af89c84e7ecda3283e",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1793032984.5000875,
+    "seen": 1793033452.8553348,
+    "ast_hash": "5a8a9ac6cd16cc60affe58747790309a",
+    "semantic_hash": ""
+  },
+  "scripts/prednasky.mjs": {
+    "mtime": 1793033065.506216,
+    "seen": 1793033452.8553348,
+    "ast_hash": "e7336de5c0ae4334eab3ec837d2442af",
+    "semantic_hash": ""
+  },
+  "src/data/prednasky.json": {
+    "mtime": 1793033409.7044587,
+    "seen": 1793033452.8553348,
+    "ast_hash": "ae4986b13a3d2ba94248a9c46457be8e",
+    "semantic_hash": ""
+  },
+  "src/home/main.jsx": {
+    "mtime": 1793033284.491548,
+    "seen": 1793033452.8553348,
+    "ast_hash": "4219d1ab07376780752263796245aedd",
+    "semantic_hash": ""
+  },
+  "src/prednasky/main.jsx": {
+    "mtime": 1793033137.8884363,
+    "seen": 1793033452.8553348,
+    "ast_hash": "df3a45732ff5d6d9706bfc1684e4ed12",
+    "semantic_hash": ""
+  },
+  "src/shared/Layout.jsx": {
+    "mtime": 1793033097.0695922,
+    "seen": 1793033452.8553348,
+    "ast_hash": "bc01e5293803f59979cdf851374720ac",
+    "semantic_hash": ""
+  },
+  "src/shared/Rich.jsx": {
+    "mtime": 1793033138.2571278,
+    "seen": 1793033452.8553348,
+    "ast_hash": "ba74844c6bed3076edf6a73009608e14",
+    "semantic_hash": ""
+  },
+  "src/shared/fold.js": {
+    "mtime": 1793033138.257638,
+    "seen": 1793033452.8553348,
+    "ast_hash": "cea3262cf9e708f54f4adff70c0e8131",
+    "semantic_hash": ""
+  },
+  "src/shared/plural.js": {
+    "mtime": 1793033284.491548,
+    "seen": 1793033452.8553348,
+    "ast_hash": "1df78389785f91db816e27260cd6ae83",
+    "semantic_hash": ""
+  },
+  "src/shared/progress.js": {
+    "mtime": 1793033120.6250885,
+    "seen": 1793033452.8553348,
+    "ast_hash": "cc9ad47a559d2ecb810437409864eed5",
+    "semantic_hash": ""
+  },
+  "src/shared/sw-template.js": {
+    "mtime": 1793033040.2333398,
+    "seen": 1793033452.8553348,
+    "ast_hash": "c6b4fd3fd2e794b1b4a441290552376c",
+    "semantic_hash": ""
+  },
+  "src/shared/theme.js": {
+    "mtime": 1793033097.1462245,
+    "seen": 1793033452.8553348,
+    "ast_hash": "25c01fe575a95d08f92b9964d604b686",
+    "semantic_hash": ""
+  },
+  "src/zapocet/Browse.jsx": {
+    "mtime": 1793033194.8175638,
+    "seen": 1793033452.8553348,
+    "ast_hash": "8fb55f2776ad94a404733123a6500de2",
+    "semantic_hash": ""
+  },
+  "src/zapocet/Flashcards.jsx": {
+    "mtime": 1793033212.4954243,
+    "seen": 1793033452.8553348,
+    "ast_hash": "7005f434156b556db499e2137a745bab",
+    "semantic_hash": ""
+  },
+  "src/zapocet/ProgressView.jsx": {
+    "mtime": 1793033230.663081,
+    "seen": 1793033452.8553348,
+    "ast_hash": "928c72d61be0a3398c18458301c6b533",
+    "semantic_hash": ""
+  },
+  "src/zapocet/TestMode.jsx": {
+    "mtime": 1793033230.504624,
+    "seen": 1793033452.8553348,
+    "ast_hash": "010ebc74d3f2aa99864b2c08c95281df",
+    "semantic_hash": ""
+  },
+  "src/zapocet/data.js": {
+    "mtime": 1793033284.491548,
+    "seen": 1793033452.8553348,
+    "ast_hash": "8d439d2fcbfe07562512a0e7732f9c3b",
+    "semantic_hash": ""
+  },
+  "src/zapocet/main.jsx": {
+    "mtime": 1793033230.6923628,
+    "seen": 1793033452.8553348,
+    "ast_hash": "509b6ad75e4c67985b737584edbcf72c",
+    "semantic_hash": ""
+  },
+  "src/zapocet/parts.jsx": {
+    "mtime": 1793033375.5901234,
+    "seen": 1793033452.8553348,
+    "ast_hash": "2b100ee3d34ae8c9f196486448eaad8b",
+    "semantic_hash": ""
+  },
+  "vite.config.js": {
+    "mtime": 1793033310.8528259,
+    "seen": 1793033452.8553348,
+    "ast_hash": "74f15c3c89d4ca44cc670e97757f197d",
+    "semantic_hash": ""
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1793033296.2197642,
+    "seen": 1793033452.8553348,
+    "ast_hash": "f5775f584e20767bdc50b903e5438910",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1793033447.3277988,
+    "seen": 1793033452.8553348,
+    "ast_hash": "aed35390764e027441384dc9a9cc8b14",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1793033044.2213466,
+    "seen": 1793033452.8553348,
+    "ast_hash": "3433621c9a6e80d77d0986d3bedac118",
+    "semantic_hash": ""
+  },
+  "prednasky/index.html": {
+    "mtime": 1793033054.5320714,
+    "seen": 1793033452.8553348,
+    "ast_hash": "0fc2b0894512dac4abd2880c6275002a",
+    "semantic_hash": ""
+  },
+  "zapocet/index.html": {
+    "mtime": 1793033044.2720802,
+    "seen": 1793033452.8553348,
+    "ast_hash": "c85d596e0b383e886bae0876c8e93d50",
+    "semantic_hash": ""
+  },
+  "zdroje/prednasky-originaly/Riadenie_nelinearnych_systemov_01+02.pdf": {
+    "mtime": 1790237039.6721509,
+    "seen": 1793033452.8553348,
+    "ast_hash": "febfb36225fb12118fbcb90f35e3c682",
+    "semantic_hash": ""
+  },
+  "zdroje/prednasky-originaly/Riadenie_nelinearnych_systemov_03+04.pdf": {
+    "mtime": 1790842023.0338838,
+    "seen": 1793033452.8553348,
+    "ast_hash": "dcf75b93de26dd014bc85ad86c2b2126",
+    "semantic_hash": ""
+  },
+  "zdroje/prednasky-originaly/Riadenie_nelinearnych_systemov_05+06.pdf": {
+    "mtime": 1793031882.7024596,
+    "seen": 1793033452.8553348,
+    "ast_hash": "c2a3a4e3fc1578ac244ea4d9aeafa3ef",
+    "semantic_hash": ""
+  },
+  "zdroje/prednasky-originaly/Riadenie_nelinearnych_systemov_07az12.pdf": {
+    "mtime": 1793031891.0561018,
+    "seen": 1793033452.8553348,
+    "ast_hash": "894afc7d04420d21ad020620f9e2689f",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1793033296.1120028,
+    "seen": 1793033452.8553348,
+    "ast_hash": "bc64d31b5e0552affb8bccdd4ad45725",
     "semantic_hash": ""
   }
 }

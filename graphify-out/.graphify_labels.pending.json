@@ -1,8 +1,14 @@
 {
   "0": "extract.py",
-  "1": "main",
+  "1": "package.json",
   "2": "ISSUES",
-  "3": "parse",
+  "3": "Layout.jsx",
   "4": "Design System: RNS — Riadenie nelineárnych systémov",
-  "5": "sample.js"
+  "5": "sample.js",
+  "6": "prednasky.mjs",
+  "7": "parts.jsx",
+  "8": "zapocet/main.jsx",
+  "9": "TestMode.jsx",
+  "10": "scripts",
+  "11": "sw-template.js"
 }
