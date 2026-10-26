@@ -162,8 +162,8 @@
     "semantic_hash": ""
   },
   "src/data/prednasky.json": {
-    "mtime": 1793033409.7044587,
-    "seen": 1793033452.8553348,
+    "mtime": 1793056165.0914338,
+    "seen": 1793056228.9090545,
     "ast_hash": "ae4986b13a3d2ba94248a9c46457be8e",
     "semantic_hash": ""
   },
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "src/prednasky/main.jsx": {
-    "mtime": 1793033137.8884363,
-    "seen": 1793033452.8553348,
-    "ast_hash": "df3a45732ff5d6d9706bfc1684e4ed12",
+    "mtime": 1793056163.777456,
+    "seen": 1793056228.9090545,
+    "ast_hash": "8d531d4cc897eea233d74a858d850df9",
     "semantic_hash": ""
   },
   "src/shared/Layout.jsx": {
@@ -222,9 +222,9 @@
     "semantic_hash": ""
   },
   "src/zapocet/Browse.jsx": {
-    "mtime": 1793033194.8175638,
-    "seen": 1793033452.8553348,
-    "ast_hash": "8fb55f2776ad94a404733123a6500de2",
+    "mtime": 1793056159.3462336,
+    "seen": 1793056228.9090545,
+    "ast_hash": "8fe8f44ccd7a800a72aab81c6113233a",
     "semantic_hash": ""
   },
   "src/zapocet/Flashcards.jsx": {

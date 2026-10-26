@@ -1,17 +1,17 @@
-# Graph Report - RNS-zapocet  (2026-10-26)
+# Graph Report - RNS-zapocet  (2026-10-27)
 
 ## Corpus Check
-- 27 files · ~65,434 words
+- 27 files · ~65,430 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 5 file(s) not represented in the graph (top: .css 4, (none) 1)
 
 ## Summary
-- 161 nodes · 310 edges · 12 communities (10 shown, 2 thin omitted)
+- 161 nodes · 313 edges · 12 communities (10 shown, 2 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `777b3a31`
+- Built from commit: `230870a8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,14 +23,14 @@
 - Design System: RNS — Riadenie nelineárnych systémov
 - prednasky.mjs
 - parts.jsx
-- zapocet/main.jsx
+- prednasky/main.jsx
 - TestMode.jsx
 - scripts
 - sw-template.js
 
 ## God Nodes (most connected - your core abstractions)
-1. `Flashcards()` - 11 edges
-2. `plural()` - 10 edges
+1. `plural()` - 12 edges
+2. `Flashcards()` - 11 edges
 3. `summarize()` - 10 edges
 4. `react` - 9 edges
 5. `Browse()` - 9 edges
@@ -70,8 +70,8 @@ Cohesion: 0.40
 Nodes (4): Answers that look doubtful (not changed), Discrepancies between the PDFs, Formatting / structure notes, ISSUES
 
 ### Community 3 - "Layout.jsx"
-Cohesion: 0.16
-Nodes (13): dateFmt, Prednasky(), size(), sizeFmt, fold(), Footer(), Header(), mount() (+5 more)
+Cohesion: 0.31
+Nodes (8): Footer(), Header(), mount(), NAV, ThemeToggle(), COLORS, getTheme(), setTheme()
 
 ### Community 4 - "Design System: RNS — Riadenie nelineárnych systémov"
 Cohesion: 0.22
@@ -82,12 +82,12 @@ Cohesion: 0.12
 Nodes (11): vite, @vitejs/plugin-react, DIR, files, gitDate(), lectures, OUT, ROOT (+3 more)
 
 ### Community 7 - "parts.jsx"
-Cohesion: 0.27
-Nodes (13): react, statusOf(), summarize(), Browse(), Item(), byTopic, questions, topicName (+5 more)
+Cohesion: 0.19
+Nodes (20): react, grade(), resetProgress(), save(), STATUS_LABEL, statusOf(), summarize(), Browse() (+12 more)
 
-### Community 8 - "zapocet/main.jsx"
-Cohesion: 0.21
-Nodes (10): Home(), plural(), grade(), loadProgress(), resetProgress(), save(), STATUS_LABEL, modeFromHash() (+2 more)
+### Community 8 - "prednasky/main.jsx"
+Cohesion: 0.20
+Nodes (8): Home(), dateFmt, Prednasky(), size(), sizeFmt, fold(), plural(), loadProgress()
 
 ### Community 9 - "TestMode.jsx"
 Cohesion: 0.31
@@ -103,8 +103,8 @@ Nodes (8): scripts, build, dev, extract, prebuild, predev, prednasky, preview
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `parts.jsx` to `zapocet/main.jsx`, `package.json`, `Layout.jsx`, `TestMode.jsx`?**
-  _High betweenness centrality (0.226) - this node is a cross-community bridge._
+- **Why does `react` connect `parts.jsx` to `prednasky/main.jsx`, `package.json`, `Layout.jsx`, `TestMode.jsx`?**
+  _High betweenness centrality (0.222) - this node is a cross-community bridge._
 - **Should `extract.py` be split into smaller, more focused modules?**
   _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._
 - **Why does `@vitejs/plugin-react` connect `prednasky.mjs` to `package.json`?**
